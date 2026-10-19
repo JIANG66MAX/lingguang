@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "results": [
+    {
+      "status": "success",
+      "filename": "cosmic-neural-brain.jpg",
+      "url": "https://mgx-backend-cdn.metadl.com/generate/images/1636061/2026-10-18/ytz4gqycaliq/cosmic-neural-brain.png",
+      "path": "https://mgx-backend-cdn.metadl.com/generate/images/1636061/2026-10-18/ytz4gqycaliq/cosmic-neural-brain.png",
+      "absolute_path": "https://mgx-backend-cdn.metadl.com/generate/images/1636061/2026-10-18/ytz4gqycaliq/cosmic-neural-brain.png"
+    }
+  ],
+  "success_count": 1,
+  "failed_count": 0,
+  "running_count": 0,
+  "message": "Generated 1/1 images total"
+}

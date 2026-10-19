@@ -1,0 +1,27 @@
+{
+    "title": "lingguang_versions",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "user_id": {
+            "type": "string"
+        },
+        "project_id": {
+            "type": "integer"
+        },
+        "prompt": {
+            "type": "string"
+        },
+        "html": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "user_id",
+        "project_id",
+        "prompt",
+        "html"
+    ]
+}

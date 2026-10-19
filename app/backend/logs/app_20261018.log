@@ -1,0 +1,1893 @@
+2026-10-18 03:07:46,243 - main - INFO - === Logging system initialized ===
+2026-10-18 03:07:46,243 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:07:46,243 - main - INFO - Log level: DEBUG
+2026-10-18 03:07:46,243 - main - INFO - Log date: 20261018
+2026-10-18 03:07:46,440 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:07:47,264 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:07:47,293 - main - INFO - Included router: routers.health.router
+2026-10-18 03:07:47,475 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:07:47,733 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:07:47,835 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:07:48,135 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:07:48,428 - main - INFO - Included router: routers.user.router
+2026-10-18 03:07:48,430 - main - INFO - === Application startup initiated ===
+2026-10-18 03:07:48,430 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:07:54,608 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-10-18 03:07:54,609 - core.database - INFO - Using QueuePool for non-Lambda environment (pool_pre_ping=True, pool_size=5, max_overflow=5, pool_recycle=280s, pool_timeout=30s, pool_use_lifo=True)
+2026-10-18 03:07:54,658 - core.database - INFO - Database connection initialized successfully
+2026-10-18 03:07:54,902 - routers.auth - INFO - [token/exchange] Received platform token exchange request
+2026-10-18 03:07:54,903 - core.config - DEBUG - Read dynamic attribute oidc_issuer_url from environment variable OIDC_ISSUER_URL
+2026-10-18 03:07:54,903 - routers.auth - DEBUG - [token/exchange] Verifying token with issuer: https://auth.atoms.dev/api/v1/oidc/platform/tokens/verify
+2026-10-18 03:07:55,106 - httpcore.connection - DEBUG - connect_tcp.started host='auth.atoms.dev' port=443 local_address=None timeout=5.0 socket_options=None
+2026-10-18 03:07:55,121 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f6520a9e3e0>
+2026-10-18 03:07:55,121 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f651f503640> server_hostname='auth.atoms.dev' timeout=5.0
+2026-10-18 03:07:55,128 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f6520b59840>
+2026-10-18 03:07:55,128 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-10-18 03:07:55,128 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-10-18 03:07:55,128 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-10-18 03:07:55,129 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-10-18 03:07:55,129 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-10-18 03:07:55,171 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 18 Oct 2026 10:07:55 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'a4c6bd218aed51f0-LAX'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'req-arrive-time', b'1792318075160'), (b'req-cost-time', b'5'), (b'resp-start-time', b'1792318075166'), (b'x-envoy-upstream-service-time', b'4'), (b'x-mgx-request-id', b'31555f03-bb3c-4b1d-8bd8-0ae6fc4d7fb6'), (b'x-request-id', b'31555f03-bb3c-4b1d-8bd8-0ae6fc4d7fb6'), (b'x-response-time', b'0.001s'), (b'Content-Encoding', b'gzip')])
+2026-10-18 03:07:55,173 - httpx - INFO - HTTP Request: POST https://auth.atoms.dev/api/v1/oidc/platform/tokens/verify "HTTP/1.1 200 OK"
+2026-10-18 03:07:55,173 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-10-18 03:07:55,174 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-10-18 03:07:55,174 - httpcore.http11 - DEBUG - response_closed.started
+2026-10-18 03:07:55,175 - httpcore.http11 - DEBUG - response_closed.complete
+2026-10-18 03:07:55,175 - httpcore.connection - DEBUG - close.started
+2026-10-18 03:07:55,175 - httpcore.connection - DEBUG - close.complete
+2026-10-18 03:07:55,176 - routers.auth - DEBUG - [token/exchange] Issuer response status: 200
+2026-10-18 03:07:55,176 - routers.auth - DEBUG - [token/exchange] Issuer response body: {'success': True, 'data': {'email': '2511572275@qq.com', 'exp': 1794752699, 'iat': 1792160699, 'pv': 0, 'user_id': 1637056}, 'message': 'Platform token verified', 'code': 0, 'timestamp': '2026-10-18T18:07:55.165320'}
+2026-10-18 03:07:55,176 - routers.auth - INFO - [token/exchange] Token verified, platform_user_id=1637056, email=2511572275@qq.com
+2026-10-18 03:07:55,176 - core.config - DEBUG - Read dynamic attribute admin_user_id from environment variable ADMIN_USER_ID
+2026-10-18 03:07:55,176 - routers.auth - INFO - [token/exchange] User verified: platform_user_id=1637056, role=admin
+2026-10-18 03:07:55,179 - routers.auth - DEBUG - [token/exchange] User object for token issuance: id=1637056, email=2511572275@qq.com, role=admin
+2026-10-18 03:07:55,180 - core.config - DEBUG - Read dynamic attribute jwt_expire_minutes from environment variable JWT_EXPIRE_MINUTES
+2026-10-18 03:07:55,180 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 03:07:55,361 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 03:07:55,369 - routers.auth - INFO - [token/exchange] Token issued successfully for user_id=1637056, expires_at=2026-11-17 10:07:55.180389+00:00
+2026-10-18 03:12:04,179 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:12:32,212 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:13:17,153 - main - INFO - === Logging system initialized ===
+2026-10-18 03:13:17,154 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:13:17,154 - main - INFO - Log level: DEBUG
+2026-10-18 03:13:17,154 - main - INFO - Log date: 20261018
+2026-10-18 03:13:17,269 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:13:18,066 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:13:18,069 - main - INFO - Included router: routers.health.router
+2026-10-18 03:13:18,166 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:13:18,191 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:13:18,201 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:13:18,227 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:13:18,241 - main - INFO - Included router: routers.user.router
+2026-10-18 03:13:18,242 - main - INFO - === Application startup initiated ===
+2026-10-18 03:13:18,242 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:13:27,092 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 03:13:27,186 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 03:13:44,778 - main - INFO - === Logging system initialized ===
+2026-10-18 03:13:44,778 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:13:44,779 - main - INFO - Log level: DEBUG
+2026-10-18 03:13:44,779 - main - INFO - Log date: 20261018
+2026-10-18 03:13:44,909 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:13:45,837 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:13:45,841 - main - INFO - Included router: routers.health.router
+2026-10-18 03:13:45,966 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:13:46,000 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:13:46,013 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:13:46,063 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:13:46,075 - main - INFO - Included router: routers.user.router
+2026-10-18 03:13:46,077 - main - INFO - === Application startup initiated ===
+2026-10-18 03:13:46,077 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:16:30,358 - main - INFO - === Logging system initialized ===
+2026-10-18 03:16:30,358 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:16:30,358 - main - INFO - Log level: DEBUG
+2026-10-18 03:16:30,359 - main - INFO - Log date: 20261018
+2026-10-18 03:16:30,465 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:16:31,187 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:16:31,189 - main - INFO - Included router: routers.health.router
+2026-10-18 03:16:31,340 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:16:31,372 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:16:31,383 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:16:31,406 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:16:31,420 - main - INFO - Included router: routers.user.router
+2026-10-18 03:16:31,421 - main - INFO - === Application startup initiated ===
+2026-10-18 03:16:31,421 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:16:39,150 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 03:16:39,234 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 03:17:27,955 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:17:52,612 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:18:56,465 - main - INFO - === Logging system initialized ===
+2026-10-18 03:18:56,465 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:18:56,465 - main - INFO - Log level: DEBUG
+2026-10-18 03:18:56,466 - main - INFO - Log date: 20261018
+2026-10-18 03:18:56,581 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:18:57,421 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:18:57,424 - main - INFO - Included router: routers.health.router
+2026-10-18 03:18:57,528 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:18:57,554 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:18:57,564 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:18:57,586 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:18:57,601 - main - INFO - Included router: routers.user.router
+2026-10-18 03:18:57,602 - main - INFO - === Application startup initiated ===
+2026-10-18 03:18:57,603 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:22:49,040 - main - INFO - === Logging system initialized ===
+2026-10-18 03:22:49,040 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:22:49,040 - main - INFO - Log level: DEBUG
+2026-10-18 03:22:49,040 - main - INFO - Log date: 20261018
+2026-10-18 03:22:49,165 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:22:50,052 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:22:50,055 - main - INFO - Included router: routers.health.router
+2026-10-18 03:22:50,149 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:22:50,177 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:22:50,189 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:22:50,216 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:22:50,229 - main - INFO - Included router: routers.user.router
+2026-10-18 03:22:50,231 - main - INFO - === Application startup initiated ===
+2026-10-18 03:22:50,231 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:22:59,827 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 03:22:59,952 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 03:23:18,228 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:23:39,440 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:24:45,252 - main - INFO - === Logging system initialized ===
+2026-10-18 03:24:45,252 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:24:45,252 - main - INFO - Log level: DEBUG
+2026-10-18 03:24:45,252 - main - INFO - Log date: 20261018
+2026-10-18 03:24:45,382 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:24:46,486 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:24:46,490 - main - INFO - Included router: routers.health.router
+2026-10-18 03:24:46,609 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:24:46,639 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:24:46,650 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:24:46,679 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:24:46,697 - main - INFO - Included router: routers.user.router
+2026-10-18 03:24:46,699 - main - INFO - === Application startup initiated ===
+2026-10-18 03:24:46,699 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:25:24,635 - main - INFO - === Logging system initialized ===
+2026-10-18 03:25:24,635 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:25:24,637 - main - INFO - Log level: DEBUG
+2026-10-18 03:25:24,637 - main - INFO - Log date: 20261018
+2026-10-18 03:25:24,787 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:25:25,838 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:25:25,842 - main - INFO - Included router: routers.health.router
+2026-10-18 03:25:25,964 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:25:26,007 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:25:26,051 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:25:26,077 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:25:26,137 - main - INFO - Included router: routers.user.router
+2026-10-18 03:25:26,139 - main - INFO - === Application startup initiated ===
+2026-10-18 03:25:26,139 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:25:29,905 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 03:25:29,998 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 03:25:48,980 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:26:12,168 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:27:13,876 - main - INFO - === Logging system initialized ===
+2026-10-18 03:27:13,876 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:27:13,877 - main - INFO - Log level: DEBUG
+2026-10-18 03:27:13,877 - main - INFO - Log date: 20261018
+2026-10-18 03:27:13,994 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:27:14,894 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:27:14,898 - main - INFO - Included router: routers.health.router
+2026-10-18 03:27:15,008 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:27:15,069 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:27:15,079 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:27:15,100 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:27:15,113 - main - INFO - Included router: routers.user.router
+2026-10-18 03:27:15,114 - main - INFO - === Application startup initiated ===
+2026-10-18 03:27:15,114 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:30:13,452 - main - INFO - === Logging system initialized ===
+2026-10-18 03:30:13,452 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:30:13,452 - main - INFO - Log level: DEBUG
+2026-10-18 03:30:13,452 - main - INFO - Log date: 20261018
+2026-10-18 03:30:13,572 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:30:14,480 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:30:14,484 - main - INFO - Included router: routers.health.router
+2026-10-18 03:30:14,657 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:30:14,687 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:30:14,698 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:30:14,725 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:30:14,739 - main - INFO - Included router: routers.user.router
+2026-10-18 03:30:14,740 - main - INFO - === Application startup initiated ===
+2026-10-18 03:30:14,741 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:30:22,171 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 03:30:22,261 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 03:30:48,393 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:31:11,641 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:32:16,541 - main - INFO - === Logging system initialized ===
+2026-10-18 03:32:16,541 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:32:16,542 - main - INFO - Log level: DEBUG
+2026-10-18 03:32:16,542 - main - INFO - Log date: 20261018
+2026-10-18 03:32:16,671 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:32:17,630 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:32:17,634 - main - INFO - Included router: routers.health.router
+2026-10-18 03:32:17,732 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:32:17,762 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:32:17,774 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:32:17,800 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:32:17,822 - main - INFO - Included router: routers.user.router
+2026-10-18 03:32:17,824 - main - INFO - === Application startup initiated ===
+2026-10-18 03:32:17,824 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:33:27,381 - main - INFO - === Logging system initialized ===
+2026-10-18 03:33:27,381 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:33:27,381 - main - INFO - Log level: DEBUG
+2026-10-18 03:33:27,381 - main - INFO - Log date: 20261018
+2026-10-18 03:33:27,536 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:33:28,637 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:33:28,643 - main - INFO - Included router: routers.health.router
+2026-10-18 03:33:28,755 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:33:28,784 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:33:28,798 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:33:28,826 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:33:28,839 - main - INFO - Included router: routers.user.router
+2026-10-18 03:33:28,840 - main - INFO - === Application startup initiated ===
+2026-10-18 03:33:28,840 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:33:36,970 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 03:33:37,047 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 03:35:08,867 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:36:09,995 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:37:16,192 - main - INFO - === Logging system initialized ===
+2026-10-18 03:37:16,192 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:37:16,192 - main - INFO - Log level: DEBUG
+2026-10-18 03:37:16,193 - main - INFO - Log date: 20261018
+2026-10-18 03:37:16,334 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:37:17,286 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:37:17,290 - main - INFO - Included router: routers.health.router
+2026-10-18 03:37:17,438 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:37:17,469 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:37:17,481 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:37:17,502 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:37:17,536 - main - INFO - Included router: routers.user.router
+2026-10-18 03:37:17,537 - main - INFO - === Application startup initiated ===
+2026-10-18 03:37:17,537 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:37:25,482 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 03:37:25,567 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 03:39:48,262 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:40:11,601 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:41:14,133 - main - INFO - === Logging system initialized ===
+2026-10-18 03:41:14,133 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:41:14,134 - main - INFO - Log level: DEBUG
+2026-10-18 03:41:14,134 - main - INFO - Log date: 20261018
+2026-10-18 03:41:14,256 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:41:15,274 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:41:15,276 - main - INFO - Included router: routers.health.router
+2026-10-18 03:41:15,427 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:41:15,459 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:41:15,470 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:41:15,495 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:41:15,509 - main - INFO - Included router: routers.user.router
+2026-10-18 03:41:15,510 - main - INFO - === Application startup initiated ===
+2026-10-18 03:41:15,511 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:45:15,638 - main - INFO - === Logging system initialized ===
+2026-10-18 03:45:15,638 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:45:15,638 - main - INFO - Log level: DEBUG
+2026-10-18 03:45:15,638 - main - INFO - Log date: 20261018
+2026-10-18 03:45:15,760 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:45:16,766 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:45:16,769 - main - INFO - Included router: routers.health.router
+2026-10-18 03:45:16,888 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:45:16,913 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:45:16,924 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:45:16,949 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:45:16,963 - main - INFO - Included router: routers.user.router
+2026-10-18 03:45:16,964 - main - INFO - === Application startup initiated ===
+2026-10-18 03:45:16,964 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:45:25,044 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 03:45:25,146 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 03:46:22,147 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:46:52,598 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:47:26,349 - main - INFO - === Logging system initialized ===
+2026-10-18 03:47:26,349 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:47:26,349 - main - INFO - Log level: DEBUG
+2026-10-18 03:47:26,349 - main - INFO - Log date: 20261018
+2026-10-18 03:47:26,499 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:47:27,466 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:47:27,470 - main - INFO - Included router: routers.health.router
+2026-10-18 03:47:27,619 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:47:27,644 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:47:27,654 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:47:27,676 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:47:27,687 - main - INFO - Included router: routers.user.router
+2026-10-18 03:47:27,688 - main - INFO - === Application startup initiated ===
+2026-10-18 03:47:27,688 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:47:36,922 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 03:47:37,011 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 03:47:54,539 - main - INFO - === Logging system initialized ===
+2026-10-18 03:47:54,539 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:47:54,539 - main - INFO - Log level: DEBUG
+2026-10-18 03:47:54,539 - main - INFO - Log date: 20261018
+2026-10-18 03:47:54,667 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:47:55,672 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:47:55,674 - main - INFO - Included router: routers.health.router
+2026-10-18 03:47:55,773 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:47:55,798 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:47:55,813 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:47:55,839 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:47:55,855 - main - INFO - Included router: routers.user.router
+2026-10-18 03:47:55,857 - main - INFO - === Application startup initiated ===
+2026-10-18 03:47:55,857 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:48:23,950 - main - INFO - === Logging system initialized ===
+2026-10-18 03:48:23,950 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:48:23,950 - main - INFO - Log level: DEBUG
+2026-10-18 03:48:23,950 - main - INFO - Log date: 20261018
+2026-10-18 03:48:24,079 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:48:25,073 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:48:25,077 - main - INFO - Included router: routers.health.router
+2026-10-18 03:48:25,242 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:48:25,269 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:48:25,279 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:48:25,305 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:48:25,321 - main - INFO - Included router: routers.user.router
+2026-10-18 03:48:25,322 - main - INFO - === Application startup initiated ===
+2026-10-18 03:48:25,322 - main - INFO - === Application startup completed successfully ===
+2026-10-18 03:48:29,479 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 03:48:29,584 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 03:49:07,997 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:49:39,172 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 03:50:45,280 - main - INFO - === Logging system initialized ===
+2026-10-18 03:50:45,280 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 03:50:45,280 - main - INFO - Log level: DEBUG
+2026-10-18 03:50:45,280 - main - INFO - Log date: 20261018
+2026-10-18 03:50:45,440 - main - INFO - Included router: routers.aihub.router
+2026-10-18 03:50:46,441 - main - INFO - Included router: routers.auth.router
+2026-10-18 03:50:46,445 - main - INFO - Included router: routers.health.router
+2026-10-18 03:50:46,585 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 03:50:46,609 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 03:50:46,626 - main - INFO - Included router: routers.settings.router
+2026-10-18 03:50:46,653 - main - INFO - Included router: routers.storage.router
+2026-10-18 03:50:46,668 - main - INFO - Included router: routers.user.router
+2026-10-18 03:50:46,669 - main - INFO - === Application startup initiated ===
+2026-10-18 03:50:46,669 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:20:47,484 - main - INFO - === Logging system initialized ===
+2026-10-18 05:20:47,484 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:20:47,484 - main - INFO - Log level: DEBUG
+2026-10-18 05:20:47,484 - main - INFO - Log date: 20261018
+2026-10-18 05:20:47,710 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:20:48,552 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:20:48,581 - main - INFO - Included router: routers.health.router
+2026-10-18 05:20:48,725 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:20:48,799 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:20:48,852 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:20:49,023 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:20:49,114 - main - INFO - Included router: routers.user.router
+2026-10-18 05:20:49,115 - main - INFO - === Application startup initiated ===
+2026-10-18 05:20:49,115 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:20:55,533 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 05:20:55,612 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 05:21:41,510 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:22:12,335 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:22:40,396 - main - INFO - === Logging system initialized ===
+2026-10-18 05:22:40,397 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:22:40,397 - main - INFO - Log level: DEBUG
+2026-10-18 05:22:40,397 - main - INFO - Log date: 20261018
+2026-10-18 05:22:40,514 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:22:41,243 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:22:41,245 - main - INFO - Included router: routers.health.router
+2026-10-18 05:22:41,352 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:22:41,382 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:22:41,396 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:22:41,429 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:22:41,443 - main - INFO - Included router: routers.user.router
+2026-10-18 05:22:41,444 - main - INFO - === Application startup initiated ===
+2026-10-18 05:22:41,444 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:22:48,787 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 05:22:48,870 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 05:23:24,751 - main - INFO - === Logging system initialized ===
+2026-10-18 05:23:24,751 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:23:24,751 - main - INFO - Log level: DEBUG
+2026-10-18 05:23:24,751 - main - INFO - Log date: 20261018
+2026-10-18 05:23:24,852 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:23:25,629 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:23:25,631 - main - INFO - Included router: routers.health.router
+2026-10-18 05:23:25,735 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:23:25,763 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:23:25,774 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:23:25,796 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:23:25,810 - main - INFO - Included router: routers.user.router
+2026-10-18 05:23:25,811 - main - INFO - === Application startup initiated ===
+2026-10-18 05:23:25,811 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:25:47,216 - main - INFO - === Logging system initialized ===
+2026-10-18 05:25:47,216 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:25:47,216 - main - INFO - Log level: DEBUG
+2026-10-18 05:25:47,216 - main - INFO - Log date: 20261018
+2026-10-18 05:25:47,322 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:25:48,081 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:25:48,085 - main - INFO - Included router: routers.health.router
+2026-10-18 05:25:48,176 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:25:48,206 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:25:48,218 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:25:48,242 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:25:48,254 - main - INFO - Included router: routers.user.router
+2026-10-18 05:25:48,256 - main - INFO - === Application startup initiated ===
+2026-10-18 05:25:48,256 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:25:52,293 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 05:25:52,372 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 05:26:55,265 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:27:29,062 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:28:34,265 - main - INFO - === Logging system initialized ===
+2026-10-18 05:28:34,265 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:28:34,265 - main - INFO - Log level: DEBUG
+2026-10-18 05:28:34,266 - main - INFO - Log date: 20261018
+2026-10-18 05:28:34,361 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:28:35,144 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:28:35,147 - main - INFO - Included router: routers.health.router
+2026-10-18 05:28:35,263 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:28:35,293 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:28:35,303 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:28:35,325 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:28:35,336 - main - INFO - Included router: routers.user.router
+2026-10-18 05:28:35,337 - main - INFO - === Application startup initiated ===
+2026-10-18 05:28:35,337 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:30:07,711 - main - INFO - === Logging system initialized ===
+2026-10-18 05:30:07,711 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:30:07,711 - main - INFO - Log level: DEBUG
+2026-10-18 05:30:07,711 - main - INFO - Log date: 20261018
+2026-10-18 05:30:07,875 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:30:08,755 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:30:08,758 - main - INFO - Included router: routers.health.router
+2026-10-18 05:30:08,852 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:30:08,879 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:30:08,889 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:30:08,913 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:30:08,926 - main - INFO - Included router: routers.user.router
+2026-10-18 05:30:08,927 - main - INFO - === Application startup initiated ===
+2026-10-18 05:30:08,928 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:30:17,677 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 05:30:17,769 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 05:31:25,859 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:31:57,253 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:33:00,336 - main - INFO - === Logging system initialized ===
+2026-10-18 05:33:00,336 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:33:00,336 - main - INFO - Log level: DEBUG
+2026-10-18 05:33:00,336 - main - INFO - Log date: 20261018
+2026-10-18 05:33:00,458 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:33:01,329 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:33:01,331 - main - INFO - Included router: routers.health.router
+2026-10-18 05:33:01,452 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:33:01,480 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:33:01,490 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:33:01,511 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:33:01,522 - main - INFO - Included router: routers.user.router
+2026-10-18 05:33:01,524 - main - INFO - === Application startup initiated ===
+2026-10-18 05:33:01,524 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:34:52,332 - main - INFO - === Logging system initialized ===
+2026-10-18 05:34:52,332 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:34:52,332 - main - INFO - Log level: DEBUG
+2026-10-18 05:34:52,332 - main - INFO - Log date: 20261018
+2026-10-18 05:34:52,484 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:34:53,439 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:34:53,442 - main - INFO - Included router: routers.health.router
+2026-10-18 05:34:53,538 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:34:53,563 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:34:53,575 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:34:53,599 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:34:53,616 - main - INFO - Included router: routers.user.router
+2026-10-18 05:34:53,617 - main - INFO - === Application startup initiated ===
+2026-10-18 05:34:53,618 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:35:01,156 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 05:35:01,237 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 05:35:54,760 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:37:02,641 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:38:05,953 - main - INFO - === Logging system initialized ===
+2026-10-18 05:38:05,953 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:38:05,953 - main - INFO - Log level: DEBUG
+2026-10-18 05:38:05,953 - main - INFO - Log date: 20261018
+2026-10-18 05:38:06,079 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:38:06,943 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:38:06,975 - main - INFO - Included router: routers.health.router
+2026-10-18 05:38:07,086 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:38:07,110 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:38:07,120 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:38:07,142 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:38:07,156 - main - INFO - Included router: routers.user.router
+2026-10-18 05:38:07,158 - main - INFO - === Application startup initiated ===
+2026-10-18 05:38:07,158 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:39:04,131 - main - INFO - === Logging system initialized ===
+2026-10-18 05:39:04,131 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:39:04,131 - main - INFO - Log level: DEBUG
+2026-10-18 05:39:04,131 - main - INFO - Log date: 20261018
+2026-10-18 05:39:04,253 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:39:05,320 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:39:05,323 - main - INFO - Included router: routers.health.router
+2026-10-18 05:39:05,433 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:39:05,460 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:39:05,474 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:39:05,500 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:39:05,516 - main - INFO - Included router: routers.user.router
+2026-10-18 05:39:05,518 - main - INFO - === Application startup initiated ===
+2026-10-18 05:39:05,518 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:39:09,883 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 05:39:09,969 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 05:41:07,124 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:41:41,762 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:42:50,533 - main - INFO - === Logging system initialized ===
+2026-10-18 05:42:50,534 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:42:50,534 - main - INFO - Log level: DEBUG
+2026-10-18 05:42:50,534 - main - INFO - Log date: 20261018
+2026-10-18 05:42:50,653 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:42:51,500 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:42:51,506 - main - INFO - Included router: routers.health.router
+2026-10-18 05:42:51,609 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:42:51,637 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:42:51,647 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:42:51,670 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:42:51,680 - main - INFO - Included router: routers.user.router
+2026-10-18 05:42:51,681 - main - INFO - === Application startup initiated ===
+2026-10-18 05:42:51,682 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:43:19,786 - main - INFO - === Logging system initialized ===
+2026-10-18 05:43:19,786 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:43:19,786 - main - INFO - Log level: DEBUG
+2026-10-18 05:43:19,786 - main - INFO - Log date: 20261018
+2026-10-18 05:43:19,917 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:43:20,750 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:43:20,752 - main - INFO - Included router: routers.health.router
+2026-10-18 05:43:20,891 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:43:20,918 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:43:20,932 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:43:20,998 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:43:21,050 - main - INFO - Included router: routers.user.router
+2026-10-18 05:43:21,051 - main - INFO - === Application startup initiated ===
+2026-10-18 05:43:21,051 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:43:24,657 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 05:43:24,747 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 05:46:55,331 - main - INFO - === Logging system initialized ===
+2026-10-18 05:46:55,331 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:46:55,331 - main - INFO - Log level: DEBUG
+2026-10-18 05:46:55,331 - main - INFO - Log date: 20261018
+2026-10-18 05:46:55,498 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:46:56,252 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:46:56,257 - main - INFO - Included router: routers.health.router
+2026-10-18 05:46:56,363 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:46:56,391 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:46:56,405 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:46:56,429 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:46:56,443 - main - INFO - Included router: routers.user.router
+2026-10-18 05:46:56,444 - main - INFO - === Application startup initiated ===
+2026-10-18 05:46:56,445 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:47:04,409 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 05:47:04,488 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 05:47:30,754 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:47:51,663 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:48:55,812 - main - INFO - === Logging system initialized ===
+2026-10-18 05:48:55,812 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:48:55,812 - main - INFO - Log level: DEBUG
+2026-10-18 05:48:55,812 - main - INFO - Log date: 20261018
+2026-10-18 05:48:55,925 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:48:56,786 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:48:56,789 - main - INFO - Included router: routers.health.router
+2026-10-18 05:48:56,878 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:48:56,907 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:48:56,922 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:48:56,943 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:48:56,955 - main - INFO - Included router: routers.user.router
+2026-10-18 05:48:56,957 - main - INFO - === Application startup initiated ===
+2026-10-18 05:48:56,957 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:51:56,291 - main - INFO - === Logging system initialized ===
+2026-10-18 05:51:56,291 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:51:56,292 - main - INFO - Log level: DEBUG
+2026-10-18 05:51:56,292 - main - INFO - Log date: 20261018
+2026-10-18 05:51:56,423 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:51:57,214 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:51:57,217 - main - INFO - Included router: routers.health.router
+2026-10-18 05:51:57,337 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:51:57,393 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:51:57,407 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:51:57,432 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:51:57,446 - main - INFO - Included router: routers.user.router
+2026-10-18 05:51:57,447 - main - INFO - === Application startup initiated ===
+2026-10-18 05:51:57,447 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:52:03,525 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 05:52:03,614 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 05:55:16,237 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:55:43,426 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 05:56:18,592 - main - INFO - === Logging system initialized ===
+2026-10-18 05:56:18,593 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:56:18,593 - main - INFO - Log level: DEBUG
+2026-10-18 05:56:18,593 - main - INFO - Log date: 20261018
+2026-10-18 05:56:18,718 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:56:19,588 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:56:19,591 - main - INFO - Included router: routers.health.router
+2026-10-18 05:56:19,710 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:56:19,735 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:56:19,745 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:56:19,766 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:56:19,781 - main - INFO - Included router: routers.user.router
+2026-10-18 05:56:19,782 - main - INFO - === Application startup initiated ===
+2026-10-18 05:56:19,783 - main - INFO - === Application startup completed successfully ===
+2026-10-18 05:56:25,277 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 05:56:25,359 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 05:56:46,798 - main - INFO - === Logging system initialized ===
+2026-10-18 05:56:46,798 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 05:56:46,798 - main - INFO - Log level: DEBUG
+2026-10-18 05:56:46,798 - main - INFO - Log date: 20261018
+2026-10-18 05:56:46,914 - main - INFO - Included router: routers.aihub.router
+2026-10-18 05:56:47,813 - main - INFO - Included router: routers.auth.router
+2026-10-18 05:56:47,816 - main - INFO - Included router: routers.health.router
+2026-10-18 05:56:47,913 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 05:56:47,938 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 05:56:47,951 - main - INFO - Included router: routers.settings.router
+2026-10-18 05:56:47,974 - main - INFO - Included router: routers.storage.router
+2026-10-18 05:56:47,987 - main - INFO - Included router: routers.user.router
+2026-10-18 05:56:47,988 - main - INFO - === Application startup initiated ===
+2026-10-18 05:56:47,988 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:01:08,091 - main - INFO - === Logging system initialized ===
+2026-10-18 06:01:08,092 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:01:08,092 - main - INFO - Log level: DEBUG
+2026-10-18 06:01:08,092 - main - INFO - Log date: 20261018
+2026-10-18 06:01:08,218 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:01:09,429 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:01:09,433 - main - INFO - Included router: routers.health.router
+2026-10-18 06:01:09,535 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:01:09,567 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:01:09,579 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:01:09,607 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:01:09,623 - main - INFO - Included router: routers.user.router
+2026-10-18 06:01:09,624 - main - INFO - === Application startup initiated ===
+2026-10-18 06:01:09,625 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:01:13,425 - main - INFO - === Logging system initialized ===
+2026-10-18 06:01:13,425 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:01:13,425 - main - INFO - Log level: DEBUG
+2026-10-18 06:01:13,425 - main - INFO - Log date: 20261018
+2026-10-18 06:01:13,551 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:01:14,271 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:01:14,276 - main - INFO - Included router: routers.health.router
+2026-10-18 06:01:14,397 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:01:14,427 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:01:14,458 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:01:14,468 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:01:14,490 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:01:14,503 - main - INFO - Included router: routers.user.router
+2026-10-18 06:01:14,504 - main - INFO - === Application startup initiated ===
+2026-10-18 06:01:14,504 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:01:15,226 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 06:01:15,313 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 06:01:25,814 - main - INFO - === Logging system initialized ===
+2026-10-18 06:01:25,814 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:01:25,814 - main - INFO - Log level: DEBUG
+2026-10-18 06:01:25,814 - main - INFO - Log date: 20261018
+2026-10-18 06:01:25,919 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:01:26,644 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:01:26,648 - main - INFO - Included router: routers.health.router
+2026-10-18 06:01:26,760 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:01:26,784 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:01:26,815 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:01:26,825 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:01:26,848 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:01:26,860 - main - INFO - Included router: routers.user.router
+2026-10-18 06:01:26,862 - main - INFO - === Application startup initiated ===
+2026-10-18 06:01:26,862 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:02:09,959 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 06:02:10,041 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 06:03:12,263 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:03:43,941 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:05:01,441 - main - INFO - === Logging system initialized ===
+2026-10-18 06:05:01,441 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:05:01,441 - main - INFO - Log level: DEBUG
+2026-10-18 06:05:01,441 - main - INFO - Log date: 20261018
+2026-10-18 06:05:01,544 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:05:02,365 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:05:02,368 - main - INFO - Included router: routers.health.router
+2026-10-18 06:05:02,485 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:05:02,512 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:05:02,542 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:05:02,577 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:05:02,600 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:05:02,615 - main - INFO - Included router: routers.user.router
+2026-10-18 06:05:02,616 - main - INFO - === Application startup initiated ===
+2026-10-18 06:05:02,616 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:09:27,344 - main - INFO - === Logging system initialized ===
+2026-10-18 06:09:27,344 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:09:27,344 - main - INFO - Log level: DEBUG
+2026-10-18 06:09:27,345 - main - INFO - Log date: 20261018
+2026-10-18 06:09:27,493 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:09:28,542 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:09:28,544 - main - INFO - Included router: routers.health.router
+2026-10-18 06:09:28,638 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:09:28,660 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:09:28,689 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:09:28,702 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:09:28,728 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:09:28,743 - main - INFO - Included router: routers.user.router
+2026-10-18 06:09:28,745 - main - INFO - === Application startup initiated ===
+2026-10-18 06:09:28,745 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:09:35,605 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 06:09:35,689 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 06:10:29,292 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-10-18 06:10:29,294 - core.database - INFO - Using QueuePool for non-Lambda environment (pool_pre_ping=True, pool_size=5, max_overflow=5, pool_recycle=280s, pool_timeout=30s, pool_use_lifo=True)
+2026-10-18 06:10:29,348 - core.database - INFO - Database connection initialized successfully
+2026-10-18 06:10:29,348 - routers.lingguang_projects - DEBUG - Creating new lingguang_projects with data: title='带分类和图表的个人记账本'
+2026-10-18 06:10:31,770 - services.lingguang_projects - INFO - Created lingguang_projects with id: 6
+2026-10-18 06:10:31,771 - routers.lingguang_projects - INFO - Lingguang_projects created successfully with id: 6
+2026-10-18 06:10:32,057 - routers.lingguang_messages - DEBUG - Creating new lingguang_messages with data: project_id=6 content='带分类和图表的个人记账本'
+2026-10-18 06:10:32,904 - services.lingguang_messages - INFO - Created lingguang_messages with id: 2
+2026-10-18 06:10:32,904 - routers.lingguang_messages - INFO - Lingguang_messages created successfully with id: 2
+2026-10-18 06:10:33,414 - core.config - DEBUG - Read dynamic attribute app_ai_base_url from environment variable APP_AI_BASE_URL
+2026-10-18 06:10:33,415 - core.config - DEBUG - Read dynamic attribute app_ai_key from environment variable APP_AI_KEY
+2026-10-18 06:10:34,745 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-924a58ac-9e83-4654-a6ed-ed174c113bc9', 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': '你是灵光网页应用工程师。根据用户需求输出完整单文件HTML，从<!DOCTYPE html>开始到</html>结束。不要Markdown和解释。内嵌所有CSS和JavaScript，界面中文，视觉精致，自适应屏幕。实现所有按钮和核心交互，使用localStorage保存必要的本地数据，图形用CSS或内联SVG。不能使用外部依赖、外部图片、网络请求或后端；需要服务端的功能明确说明不可用，不模拟成功。不要表单跳转。小游戏需要键盘和触屏支持。后续修改时保留原有功能，输出修改后的完整HTML。'}, {'role': 'user', 'content': '带分类和图表的个人记账本'}], 'model': 'gpt-5.4', 'max_tokens': 4096, 'stream': False, 'temperature': 0.7}}
+2026-10-18 06:10:34,747 - openai._base_client - DEBUG - Sending HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions
+2026-10-18 06:10:34,748 - httpcore.connection - DEBUG - connect_tcp.started host='llmapi-api.deepwisdom.ai' port=443 local_address=None timeout=5.0 socket_options=None
+2026-10-18 06:10:34,762 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f86aad02c80>
+2026-10-18 06:10:34,762 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f86ab7c74c0> server_hostname='llmapi-api.deepwisdom.ai' timeout=5.0
+2026-10-18 06:10:34,769 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f86aad00ca0>
+2026-10-18 06:10:34,770 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-10-18 06:10:34,771 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-10-18 06:10:34,771 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-10-18 06:10:34,772 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-10-18 06:10:34,772 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-10-18 06:11:06,035 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 18 Oct 2026 13:11:06 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'cloudflare'), (b'apim-request-id', b'6306bc97-3c29-4d6b-8b17-94958fdf3d7a'), (b'azureai-fe-is-streaming', b'False'), (b'azureai-fe-offer-type', b'paygo'), (b'azureml-model-session', b'd20261010140548-cad227fd'), (b'skip-error-remapping', b'true'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'vary', b'Origin, Accept-Encoding'), (b'x-content-type-options', b'nosniff'), (b'x-ms-is-spilled-over', b'false'), (b'x-ms-rai-invoked', b'true'), (b'x-ms-region', b'West US 3'), (b'x-ms-served-model', b'gpt-5.4-2026-03-05'), (b'x-oneapi-request-id', b'2026101806103479190448003318659'), (b'x-oneapi-trans-id', b'55452448235455190'), (b'x-ratelimit-abusepenalty-active', b'False'), (b'x-ratelimit-key', b'gpt-5.4'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'999835'), (b'x-ratelimit-renewalperiod-requests', b'60'), (b'x-ratelimit-renewalperiod-tokens', b'60'), (b'x-ratelimit-reset-requests', b'0'), (b'x-ratelimit-reset-tokens', b'0'), (b'x-request-id', b'ac5e22ab-e643-4090-971c-dae518f10469'), (b'req-cost-time', b'31240'), (b'req-arrive-time', b'1792329034790'), (b'resp-start-time', b'1792329066031'), (b'x-envoy-upstream-service-time', b'31239'), (b'content-encoding', b'gzip'), (b'cf-cache-status', b'DYNAMIC'), (b'CF-RAY', b'a4c7c8b35eda2c18-LAX')])
+2026-10-18 06:11:06,036 - httpx - INFO - HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-18 06:11:06,036 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-10-18 06:11:06,037 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-10-18 06:11:06,037 - httpcore.http11 - DEBUG - response_closed.started
+2026-10-18 06:11:06,037 - httpcore.http11 - DEBUG - response_closed.complete
+2026-10-18 06:11:06,037 - openai._base_client - DEBUG - HTTP Response: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "200 OK" Headers({'date': 'Sun, 18 Oct 2026 13:11:06 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'server': 'cloudflare', 'apim-request-id': '6306bc97-3c29-4d6b-8b17-94958fdf3d7a', 'azureai-fe-is-streaming': 'False', 'azureai-fe-offer-type': 'paygo', 'azureml-model-session': 'd20261010140548-cad227fd', 'skip-error-remapping': 'true', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-ms-is-spilled-over': 'false', 'x-ms-rai-invoked': 'true', 'x-ms-region': 'West US 3', 'x-ms-served-model': 'gpt-5.4-2026-03-05', 'x-oneapi-request-id': '2026101806103479190448003318659', 'x-oneapi-trans-id': '55452448235455190', 'x-ratelimit-abusepenalty-active': 'False', 'x-ratelimit-key': 'gpt-5.4', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '1000000', 'x-ratelimit-remaining-requests': '9999', 'x-ratelimit-remaining-tokens': '999835', 'x-ratelimit-renewalperiod-requests': '60', 'x-ratelimit-renewalperiod-tokens': '60', 'x-ratelimit-reset-requests': '0', 'x-ratelimit-reset-tokens': '0', 'x-request-id': 'ac5e22ab-e643-4090-971c-dae518f10469', 'req-cost-time': '31240', 'req-arrive-time': '1792329034790', 'resp-start-time': '1792329066031', 'x-envoy-upstream-service-time': '31239', 'content-encoding': 'gzip', 'cf-cache-status': 'DYNAMIC', 'cf-ray': 'a4c7c8b35eda2c18-LAX'})
+2026-10-18 06:11:06,038 - openai._base_client - DEBUG - request_id: ac5e22ab-e643-4090-971c-dae518f10469
+2026-10-18 06:11:07,170 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-de723e0e-ae35-40c4-a8a9-209400a3c145', 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': '你是灵光网页应用工程师。根据用户需求输出完整单文件HTML，从<!DOCTYPE html>开始到</html>结束。不要Markdown和解释。内嵌所有CSS和JavaScript，界面中文，视觉精致，自适应屏幕。实现所有按钮和核心交互，使用localStorage保存必要的本地数据，图形用CSS或内联SVG。不能使用外部依赖、外部图片、网络请求或后端；需要服务端的功能明确说明不可用，不模拟成功。不要表单跳转。小游戏需要键盘和触屏支持。后续修改时保留原有功能，输出修改后的完整HTML。'}, {'role': 'user', 'content': '带分类和图表的个人记账本'}, {'role': 'assistant', 'content': '<!DOCTYPE html>\n<html lang="zh-CN">\n<head>\n  <meta charset="UTF-8" />\n  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />\n  <title>个人记账本</title>\n  <style>\n    :root{\n      --bg:#0f1221;\n      --panel:#171a2b;\n      --panel-2:#1d2238;\n      --card:#12162a;\n      --text:#eef2ff;\n      --muted:#9aa4c7;\n      --primary:#7c8cff;\n      --primary-2:#5eead4;\n      --danger:#ff6b7a;\n      --warning:#ffb454;\n      --success:#4ade80;\n      --shadow:0 10px 30px rgba(0,0,0,.28);\n      --radius:18px;\n      --radius-sm:12px;\n      --border:1px solid rgba(255,255,255,.08);\n      --income:#4ade80;\n      --expense:#ff7a90;\n      --transfer:#8b9cff;\n      --food:#ff9f43;\n      --transport:#4dd4ac;\n      --shopping:#7c8cff;\n      --home:#ff6bb3;\n      --entertain:#ffd166;\n      --medical:#63b3ff;\n      --salary:#4ade80;\n      --other:#a0aec0;\n    }\n    *{box-sizing:border-box}\n    html,body{height:100%}\n    body{\n      margin:0;\n      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC","Hiragino Sans GB","Microsoft Yahei", sans-serif;\n      color:var(--text);\n      background:\n        radial-gradient(1200px 500px at -10% -10%, rgba(124,140,255,.18), transparent 50%),\n        radial-gradient(900px 500px at 110% -10%, rgba(94,234,212,.12), transparent 45%),\n        linear-gradient(180deg, #0e1120 0%, #0a0d18 100%);\n      overflow-x:hidden;\n    }\n    .app{\n      display:grid;\n      grid-template-columns: 280px 1fr;\n      min-height:100vh;\n    }\n    .sidebar{\n      background:linear-gradient(180deg, rgba(23,26,43,.9), rgba(17,20,34,.95));\n      border-right:var(--border);\n      padding:22px 18px;\n      position:sticky;\n      top:0;\n      height:100vh;\n      backdrop-filter: blur(10px);\n    }\n    .brand{\n      display:flex;\n      align-items:center;\n      gap:12px;\n      margin-bottom:22px;\n    }\n    .logo{\n      width:42px;height:42px;border-radius:14px;\n      background:linear-gradient(135deg, var(--primary), var(--primary-2));\n      display:grid;place-items:center;\n      box-shadow:0 8px 24px rgba(124,140,255,.35);\n      flex:0 0 auto;\n    }\n    .brand h1{\n      font-size:20px; margin:0; letter-spacing:.5px;\n    }\n    .brand p{\n      margin:2px 0 0; color:var(--muted); font-size:12px;\n    }\n    .nav{\n      display:flex; flex-direction:column; gap:10px; margin-top:10px;\n    }\n    .nav-btn{\n      border:none; color:var(--text); background:transparent; cursor:pointer;\n      padding:14px 14px; border-radius:14px; text-align:left; font-size:15px;\n      display:flex; align-items:center; gap:12px;\n      transition:.22s ease;\n      border:1px solid transparent;\n    }\n    .nav-btn:hover{background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.06)}\n    .nav-btn.active{\n      background:linear-gradient(135deg, rgba(124,140,255,.18), rgba(94,234,212,.12));\n      border-color:rgba(124,140,255,.25);\n      box-shadow: inset 0 0 0 1px rgba(255,255,255,.03);\n    }\n    .nav-btn svg{opacity:.95}\n    .side-card{\n      margin-top:18px;\n      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));\n      border:var(--border);\n      border-radius:18px;\n      padding:16px;\n      box-shadow:var(--shadow);\n    }\n    .tip{\n      color:var(--muted);\n      font-size:13px;\n      line-height:1.6;\n    }\n    .main{\n      padding:22px;\n      min-width:0;\n    }\n    .topbar{\n      display:flex; gap:14px; align-items:center; justify-content:space-between;\n      margin-bottom:20px;\n      flex-wrap:wrap;\n    }\n    .hello h2{margin:0 0 6px; font-size:28px}\n    .hello p{margin:0; color:var(--muted)}\n    .top-actions{\n      display:flex; gap:10px; flex-wrap:wrap;\n    }\n    .btn{\n      border:none; cursor:pointer; color:var(--text);\n      background:rgba(255,255,255,.06);\n      border:var(--border);\n      padding:12px 16px;\n      border-radius:14px;\n      font-size:14px;\n      transition:.2s ease;\n      display:inline-flex; align-items:center; justify-content:center; gap:8px;\n      min-height:44px;\n    }\n    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.08)}\n    .btn.primary{\n      background:linear-gradient(135deg, var(--primary), #6d7cff);\n      border-color:transparent;\n      box-shadow:0 10px 24px rgba(124,140,255,.28);\n    }\n    .btn.success{\n      background:linear-gradient(135deg, #1f9d64, #37cf7a);\n      border-color:transparent;\n    }\n    .btn.danger{\n      background:linear-gradient(135deg, #d43c5d, #ff6b7a);\n      border-color:transparent;\n    }\n    .btn.ghost{background:transparent}\n    .btn.small{padding:8px 12px; min-height:36px; border-radius:12px; font-size:13px}\n    .grid{\n      display:grid;\n      gap:16px;\n    }\n    .summary-grid{\n      grid-template-columns: repeat(4, minmax(0,1fr));\n    }\n    .card{\n      background:linear-gradient(180deg, rgba(24,28,47,.92), rgba(18,22,40,.92));\n      border:var(--border);\n      border-radius:var(--radius);\n      box-shadow:var(--shadow);\n      padding:18px;\n      min-width:0;\n    }\n    .stat{\n      position:relative;\n      overflow:hidden;\n    }\n    .stat::after{\n      content:"";\n      position:absolute; inset:auto -20px -20px auto;\n      width:90px;height:90px;border-radius:50%;\n      background:radial-gradient(circle, rgba(255,255,255,.13), transparent 65%);\n      pointer-events:none;\n    }\n    .stat .label{color:var(--muted); font-size:13px; margin-bottom:8px}\n    .stat .value{font-size:28px; font-weight:700; letter-spacing:.3px}\n    .stat .sub{margin-top:8px; font-size:12px; color:var(--muted)}\n    .income{color:var(--income)}\n    .expense{color:var(--expense)}\n    .balance{color:var(--primary-2)}\n    .section{\n      display:none;\n      animation:fade .22s ease;\n    }\n    .section.active{display:block}\n    @keyframes fade{from{opacity:.6;transform:translateY(4px)}to{opacity:1;transform:none}}\n    .two-col{\n      display:grid; grid-template-columns: 1.15fr .85fr; gap:16px;\n    }\n    .three-col{\n      display:grid; grid-template-columns: 1fr 1fr 1fr; gap:16px;\n    }\n    .toolbar{\n      display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between; margin-bottom:14px;\n    }\n    .toolbar-left,.toolbar-right{display:flex; gap:10px; flex-wrap:wrap; align-items:center}\n    .input,.select,.textarea{\n      width:100%;\n      background:rgba(255,255,255,.04);\n      color:var(--text);\n      border:var(--border);\n      border-radius:14px;\n      padding:12px 14px;\n      outline:none;\n      transition:.2s ease;\n      font-size:14px;\n    }\n    .textarea{min-height:96px; resize:vertical}\n    .input:focus,.select:focus,.textarea:focus{\n      border-color:rgba(124,140,255,.55);\n      box-shadow:0 0 0 3px rgba(124,140,255,.14);\n      background:rgba(255,255,255,.05);\n    }\n    .field{display:flex; flex-direction:column; gap:8px}\n    .field label{font-size:13px; color:var(--muted)}\n    .form-grid{\n      display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:14px;\n    }\n    .form-grid .full{grid-column:1/-1}\n    .segmented{\n      display:flex; gap:8px; flex-wrap:wrap;\n      background:rgba(255,255,255,.03);\n      padding:6px; border-radius:16px; border:var(--border);\n    }\n    .segmented button{\n      flex:1 1 auto; border:none; cursor:pointer; color:var(--text);\n      background:transparent; padding:10px 14px; border-radius:12px;\n      transition:.2s ease; font-size:14px;\n    }\n    .segmented button.active{\n      background:linear-gradient(135deg, rgba(124,140,255,.22), rgba(94,234,212,.12));\n      border:1px solid rgba(124,140,255,.25);\n    }\n    .list{\n      display:flex; flex-direction:column; gap:10px;\n      max-height:560px; overflow:auto; padding-right:4px;\n    }\n    .list::-webkit-scrollbar,.table-wrap::-webkit-scrollbar{height:8px;width:8px}\n    .list::-webkit-scrollbar-thumb,.table-wrap::-webkit-scrollbar-thumb{\n      background:rgba(255,255,255,.12); border-radius:999px\n    }\n    .tx{\n      display:grid;\n      grid-template-columns: auto 1fr auto;\n      gap:12px;\n      align-items:center;\n      padding:14px;\n      border-radius:16px;\n      background:rgba(255,255,255,.035);\n      border:1px solid rgba(255,255,255,.06);\n    }\n    .tx-icon{\n      width:44px;height:44px;border-radius:14px; display:grid; place-items:center; flex:0 0 auto;\n      background:rgba(255,255,255,.08);\n    }\n    .tx-title{font-weight:600; margin-bottom:4px}\n    .tx-meta{font-size:12px; color:var(--muted); display:flex; gap:10px; flex-wrap:wrap}\n    .tx-amt{font-weight:700; text-align:right}\n    .tx-actions{display:flex; gap:6px; margin-top:8px; justify-content:flex-end}\n    .pill{\n      display:inline-flex; align-items:center; gap:6px;\n      padding:6px 10px; border-radius:999px; font-size:12px;\n      background:rgba(255,255,255,.06); color:var(--text);\n      border:1px solid rgba(255,255,255,.06);\n    }\n    .muted{color:var(--muted)}\n    .title-row{\n      display:flex; justify-content:space-between; gap:10px; align-items:center; margin-bottom:14px; flex-wrap:wrap;\n    }\n    .title-row h3{margin:0; font-size:18px}\n    .canvas-wrap{\n      width:100%; height:320px; position:relative;\n      background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));\n      border-radius:16px;\n      border:1px solid rgba(255,255,255,.06);\n      overflow:hidden;\n    }\n    .canvas-wrap.small{height:280px}\n    canvas{display:block; width:100%; height:100%}\n    .legend{\n      display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;\n    }\n    .legend .item{\n      display:flex; align-items:center; gap:8px; font-size:12px; color:var(--muted)\n    }\n    .dot{width:10px;height:10px;border-radius:50%}\n    .cat-grid{\n      display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:10px;\n    }\n    .cat-item{\n      padding:12px 14px; border-radius:14px;\n      background:rgba(255,255,255,.035);\n      border:1px solid rgba(255,255,255,.06);\n      display:flex; justify-content:space-between; gap:10px; align-items:center;\n    }\n    .table-wrap{overflow:auto}\n    table{width:100%; border-collapse:separate; border-spacing:0 10px}\n    th,td{text-align:left; padding:12px 14px; font-size:14px}\n    th{color:var(--muted); font-weight:600; font-size:13px}\n    tbody tr{\n      background:rgba(255,255,255,.035);\n      border:1px solid rgba(255,255,255,.06);\n    }\n    tbody tr td:first-child{border-radius:12px 0 0 12px}\n    tbody tr td:last-child{border-radius:0 12px 12px 0}\n    .empty{\n      text-align:center; padding:30px 18px; color:var(--muted);\n      border:1px dashed rgba(255,255,255,.12);\n      border-radius:16px;\n      background:rgba(255,255,255,.02);\n    }\n    .footer-note{\n      color:var(--muted); font-size:12px; margin-top:10px;\n    }\n    .floating-add{\n      position:fixed; right:18px; bottom:18px; z-index:30;\n      width:60px;height:60px;border:none; cursor:pointer; color:white;\n      border-radius:20px;\n      background:linear-gradient(135deg, var(--primary), var(--primary-2));\n      box-shadow:0 18px 34px rgba(124,140,255,.35);\n      display:none; place-items:center;\n    }\n    .modal{\n      position:fixed; inset:0; background:rgba(5,8,18,.65);\n      display:none; align-items:center; justify-content:center;\n      padding:16px; z-index:50;\n      backdrop-filter: blur(5px);\n    }\n    .modal.show{display:flex}\n    .modal-card{\n      width:min(760px,100%);\n      max-height:min(92vh,900px);\n      overflow:auto;\n      background:linear-gradient(180deg, #161a2d, #121628);\n      border:var(--border);\n      border-radius:24px;\n      box-shadow:var(--shadow);\n      padding:18px;\n    }\n    .modal-head{\n      display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:14px;\n    }\n    .modal-head h3{margin:0}\n    .close-btn{\n      border:none;background:rgba(255,255,255,.06);color:var(--text);\n      width:40px;height:40px;border-radius:12px;cursor:pointer;\n    }\n    .toast{\n      position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px);\n      background:rgba(20,24,40,.95);\n      border:var(--border); color:var(--text);\n      padding:12px 16px; border-radius:14px; box-shadow:var(--shadow);\n      opacity:0; pointer-events:none; transition:.25s ease; z-index:80;\n      min-width:180px; text-align:center;\n    }\n    .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}\n    .switch{\n      display:flex; gap:8px; align-items:center; flex-wrap:wrap;\n      background:rgba(255,255,255,.03); border:var(--border); border-radius:14px; padding:6px;\n    }\n    .switch button{\n      border:none;background:transparent;color:var(--text);padding:9px 12px;border-radius:10px;cursor:pointer\n    }\n    .switch button.active{background:rgba(255,255,255,.08)}\n    .range-wrap{display:flex; align-items:center; gap:12px}\n    .range{width:100%}\n    .mini{\n      font-size:12px;color:var(--muted)\n    }\n    .danger-text{color:var(--danger)}\n    @media (max-width: 1100px){\n      .summary-grid{grid-template-columns: repeat(2,minmax(0,1fr))}\n      .two-col,.three-col{grid-template-columns:1fr}\n      .sidebar{display:none}\n      .app{grid-template-columns:1fr}\n      .floating-add{display:grid}\n      .main{padding:16px}\n      .hello h2{font-size:24px}\n    }\n    @media (max-width: 680px){\n      .summary-grid,.form-grid,.cat-grid{grid-template-columns:1fr}\n      .topbar{align-items:flex-start}\n      .top'}, {'role': 'user', 'content': '上次输出未通过HTML完整性校验。请修复并输出完整的单文件HTML，从<!DOCTYPE html>开始，到</html>结束。所有style和script标签必须闭合。保留用户要求的全部核心功能，精简冗余装饰以避免输出被截断。不要解释，不要Markdown。'}], 'model': 'gpt-5.4', 'max_tokens': 4096, 'stream': False, 'temperature': 0.7}}
+2026-10-18 06:11:07,171 - openai._base_client - DEBUG - Sending HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions
+2026-10-18 06:11:07,172 - httpcore.connection - DEBUG - connect_tcp.started host='llmapi-api.deepwisdom.ai' port=443 local_address=None timeout=5.0 socket_options=None
+2026-10-18 06:11:07,189 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f86aaa2e500>
+2026-10-18 06:11:07,190 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f86b386aa40> server_hostname='llmapi-api.deepwisdom.ai' timeout=5.0
+2026-10-18 06:11:07,198 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f86aaa2e320>
+2026-10-18 06:11:07,199 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-10-18 06:11:07,199 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-10-18 06:11:07,199 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-10-18 06:11:07,200 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-10-18 06:11:07,200 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-10-18 06:11:36,624 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 18 Oct 2026 13:11:36 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'cloudflare'), (b'apim-request-id', b'e6dcd864-e064-490c-880d-dc3465a685ef'), (b'azureai-fe-is-streaming', b'False'), (b'azureai-fe-offer-type', b'paygo'), (b'azureml-model-session', b'd20261010140548-cad227fd'), (b'skip-error-remapping', b'true'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'vary', b'Origin, Accept-Encoding'), (b'x-content-type-options', b'nosniff'), (b'x-ms-is-spilled-over', b'false'), (b'x-ms-rai-invoked', b'true'), (b'x-ms-region', b'West US 3'), (b'x-ms-served-model', b'gpt-5.4-2026-03-05'), (b'x-oneapi-request-id', b'2026101806110721516697284342641'), (b'x-oneapi-trans-id', b'55452502627189461'), (b'x-ratelimit-abusepenalty-active', b'False'), (b'x-ratelimit-key', b'gpt-5.4'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'1000000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'995661'), (b'x-ratelimit-renewalperiod-requests', b'60'), (b'x-ratelimit-renewalperiod-tokens', b'60'), (b'x-ratelimit-reset-requests', b'0'), (b'x-ratelimit-reset-tokens', b'0'), (b'x-request-id', b'66397ccc-b3ea-4787-a7eb-e3893e797223'), (b'req-cost-time', b'29406'), (b'req-arrive-time', b'1792329067213'), (b'resp-start-time', b'1792329096619'), (b'x-envoy-upstream-service-time', b'29406'), (b'content-encoding', b'gzip'), (b'cf-cache-status', b'DYNAMIC'), (b'CF-RAY', b'a4c7c97e0a7ac78b-LAX')])
+2026-10-18 06:11:36,626 - httpx - INFO - HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-10-18 06:11:36,626 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-10-18 06:11:36,627 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-10-18 06:11:36,627 - httpcore.http11 - DEBUG - response_closed.started
+2026-10-18 06:11:36,627 - httpcore.http11 - DEBUG - response_closed.complete
+2026-10-18 06:11:36,628 - openai._base_client - DEBUG - HTTP Response: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "200 OK" Headers({'date': 'Sun, 18 Oct 2026 13:11:36 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'server': 'cloudflare', 'apim-request-id': 'e6dcd864-e064-490c-880d-dc3465a685ef', 'azureai-fe-is-streaming': 'False', 'azureai-fe-offer-type': 'paygo', 'azureml-model-session': 'd20261010140548-cad227fd', 'skip-error-remapping': 'true', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'vary': 'Origin, Accept-Encoding', 'x-content-type-options': 'nosniff', 'x-ms-is-spilled-over': 'false', 'x-ms-rai-invoked': 'true', 'x-ms-region': 'West US 3', 'x-ms-served-model': 'gpt-5.4-2026-03-05', 'x-oneapi-request-id': '2026101806110721516697284342641', 'x-oneapi-trans-id': '55452502627189461', 'x-ratelimit-abusepenalty-active': 'False', 'x-ratelimit-key': 'gpt-5.4', 'x-ratelimit-limit-requests': '10000', 'x-ratelimit-limit-tokens': '1000000', 'x-ratelimit-remaining-requests': '9999', 'x-ratelimit-remaining-tokens': '995661', 'x-ratelimit-renewalperiod-requests': '60', 'x-ratelimit-renewalperiod-tokens': '60', 'x-ratelimit-reset-requests': '0', 'x-ratelimit-reset-tokens': '0', 'x-request-id': '66397ccc-b3ea-4787-a7eb-e3893e797223', 'req-cost-time': '29406', 'req-arrive-time': '1792329067213', 'resp-start-time': '1792329096619', 'x-envoy-upstream-service-time': '29406', 'content-encoding': 'gzip', 'cf-cache-status': 'DYNAMIC', 'cf-ray': 'a4c7c97e0a7ac78b-LAX'})
+2026-10-18 06:11:36,629 - openai._base_client - DEBUG - request_id: 66397ccc-b3ea-4787-a7eb-e3893e797223
+2026-10-18 06:13:44,122 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:14:19,780 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:15:29,207 - main - INFO - === Logging system initialized ===
+2026-10-18 06:15:29,208 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:15:29,208 - main - INFO - Log level: DEBUG
+2026-10-18 06:15:29,208 - main - INFO - Log date: 20261018
+2026-10-18 06:15:29,342 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:15:30,384 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:15:30,389 - main - INFO - Included router: routers.health.router
+2026-10-18 06:15:30,537 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:15:30,564 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:15:30,595 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:15:30,605 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:15:30,625 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:15:30,639 - main - INFO - Included router: routers.user.router
+2026-10-18 06:15:30,641 - main - INFO - === Application startup initiated ===
+2026-10-18 06:15:30,641 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:16:23,395 - main - INFO - === Logging system initialized ===
+2026-10-18 06:16:23,396 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:16:23,396 - main - INFO - Log level: DEBUG
+2026-10-18 06:16:23,396 - main - INFO - Log date: 20261018
+2026-10-18 06:16:23,526 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:16:24,525 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:16:24,528 - main - INFO - Included router: routers.health.router
+2026-10-18 06:16:24,665 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:16:24,693 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:16:24,726 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:16:24,737 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:16:24,759 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:16:24,774 - main - INFO - Included router: routers.user.router
+2026-10-18 06:16:24,775 - main - INFO - === Application startup initiated ===
+2026-10-18 06:16:24,776 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:16:30,949 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 06:16:31,040 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 06:18:25,811 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-10-18 06:18:25,813 - core.database - INFO - Using QueuePool for non-Lambda environment (pool_pre_ping=True, pool_size=5, max_overflow=5, pool_recycle=280s, pool_timeout=30s, pool_use_lifo=True)
+2026-10-18 06:18:25,860 - core.database - INFO - Database connection initialized successfully
+2026-10-18 06:18:25,860 - routers.lingguang_projects - DEBUG - Creating new lingguang_projects with data: title='番茄钟 + 待办清单'
+2026-10-18 06:18:27,662 - services.lingguang_projects - INFO - Created lingguang_projects with id: 8
+2026-10-18 06:18:27,662 - routers.lingguang_projects - INFO - Lingguang_projects created successfully with id: 8
+2026-10-18 06:18:27,913 - routers.lingguang_messages - DEBUG - Creating new lingguang_messages with data: project_id=8 content='番茄钟 + 待办清单'
+2026-10-18 06:18:28,747 - services.lingguang_messages - INFO - Created lingguang_messages with id: 4
+2026-10-18 06:18:28,748 - routers.lingguang_messages - INFO - Lingguang_messages created successfully with id: 4
+2026-10-18 06:18:28,965 - core.config - DEBUG - Read dynamic attribute app_ai_base_url from environment variable APP_AI_BASE_URL
+2026-10-18 06:18:28,965 - core.config - DEBUG - Read dynamic attribute app_ai_key from environment variable APP_AI_KEY
+2026-10-18 06:18:30,282 - openai._base_client - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-37877dcb-d484-48ad-8972-21ba06d19498', 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': '你是灵光网页应用工程师。根据用户需求输出完整单文件HTML，从<!DOCTYPE html>开始到</html>结束。不要Markdown和解释。控制输出长度，避免冗长注释、重复样式及大型内联图形，优先实现完整核心功能；输出前检查html、body、style、script真实标签已闭合，不省略代码或用占位符代替实现。内嵌所有CSS和JavaScript，界面中文，视觉精致，自适应屏幕。实现所有按钮和核心交互，使用localStorage保存必要的本地数据，图形用CSS或内联SVG。不能使用外部依赖、外部图片、网络请求或后端；需要服务端的功能明确说明不可用，不模拟成功。不要表单跳转。小游戏需要键盘和触屏支持。后续修改时保留原有功能，输出修改后的完整HTML。'}, {'role': 'user', 'content': '番茄钟 + 待办清单'}], 'model': 'gpt-5.4', 'max_tokens': 4096, 'stream': False, 'temperature': 0.7}}
+2026-10-18 06:18:30,283 - openai._base_client - DEBUG - Sending HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions
+2026-10-18 06:18:30,283 - httpcore.connection - DEBUG - connect_tcp.started host='llmapi-api.deepwisdom.ai' port=443 local_address=None timeout=5.0 socket_options=None
+2026-10-18 06:18:30,308 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f9c46f243a0>
+2026-10-18 06:18:30,308 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f9c4c0834c0> server_hostname='llmapi-api.deepwisdom.ai' timeout=5.0
+2026-10-18 06:18:30,315 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f9c46f27040>
+2026-10-18 06:18:30,315 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-10-18 06:18:30,316 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-10-18 06:18:30,316 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-10-18 06:18:30,316 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-10-18 06:18:30,316 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-10-18 06:18:30,349 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 403, b'Forbidden', [(b'Date', b'Sun, 18 Oct 2026 13:18:30 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'server', b'cloudflare'), (b'x-oneapi-request-id', b'2026101806183033449025032248157'), (b'x-oneapi-trans-id', b'55453246059184855'), (b'x-request-id', b'2026101806183033449025032248157'), (b'req-cost-time', b'12'), (b'req-arrive-time', b'1792329510332'), (b'resp-start-time', b'1792329510345'), (b'x-envoy-upstream-service-time', b'11'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'a4c7d44f7d03192c-LAX')])
+2026-10-18 06:18:30,350 - httpx - INFO - HTTP Request: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-10-18 06:18:30,351 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-10-18 06:18:30,351 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-10-18 06:18:30,351 - httpcore.http11 - DEBUG - response_closed.started
+2026-10-18 06:18:30,352 - httpcore.http11 - DEBUG - response_closed.complete
+2026-10-18 06:18:30,352 - openai._base_client - DEBUG - HTTP Response: POST https://llmapi-api.deepwisdom.ai/v1/chat/completions "403 Forbidden" Headers({'date': 'Sun, 18 Oct 2026 13:18:30 GMT', 'content-type': 'application/json; charset=utf-8', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'server': 'cloudflare', 'x-oneapi-request-id': '2026101806183033449025032248157', 'x-oneapi-trans-id': '55453246059184855', 'x-request-id': '2026101806183033449025032248157', 'req-cost-time': '12', 'req-arrive-time': '1792329510332', 'resp-start-time': '1792329510345', 'x-envoy-upstream-service-time': '11', 'cf-cache-status': 'DYNAMIC', 'content-encoding': 'gzip', 'cf-ray': 'a4c7d44f7d03192c-LAX'})
+2026-10-18 06:18:30,352 - openai._base_client - DEBUG - request_id: 2026101806183033449025032248157
+2026-10-18 06:18:30,352 - openai._base_client - DEBUG - Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "/opt/python/envs/mgx-chat/lib/python3.10/site-packages/openai/_base_client.py", line 1646, in request
+    response.raise_for_status()
+  File "/opt/python/envs/mgx-chat/lib/python3.10/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '403 Forbidden' for url 'https://llmapi-api.deepwisdom.ai/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403
+2026-10-18 06:18:30,353 - openai._base_client - DEBUG - Not retrying
+2026-10-18 06:18:30,353 - openai._base_client - DEBUG - Re-raising status error
+2026-10-18 06:18:30,354 - services.aihub - ERROR - gentxt error: Error code: 403 - {'error': {'message': 'AI balance is insufficient to finish the operation. Please go to the settings to top up. (request id: 2026101806183033449025032248157)', 'type': 'one_api_error', 'param': '', 'code': 'insufficient_ai_balance'}}
+2026-10-18 06:18:30,354 - routers.aihub - ERROR - Text generation failed: Error code: 403 - {'error': {'message': 'AI balance is insufficient to finish the operation. Please go to the settings to top up. (request id: 2026101806183033449025032248157)', 'type': 'one_api_error', 'param': '', 'code': 'insufficient_ai_balance'}}
+2026-10-18 06:22:15,090 - main - INFO - === Logging system initialized ===
+2026-10-18 06:22:15,090 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:22:15,091 - main - INFO - Log level: DEBUG
+2026-10-18 06:22:15,091 - main - INFO - Log date: 20261018
+2026-10-18 06:22:15,190 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:22:15,885 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:22:15,889 - main - INFO - Included router: routers.health.router
+2026-10-18 06:22:15,996 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:22:16,060 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:22:16,104 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:22:16,137 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:22:16,149 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:22:16,174 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:22:16,187 - main - INFO - Included router: routers.user.router
+2026-10-18 06:22:16,188 - main - INFO - === Application startup initiated ===
+2026-10-18 06:22:16,188 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:22:29,385 - main - INFO - === Logging system initialized ===
+2026-10-18 06:22:29,385 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:22:29,386 - main - INFO - Log level: DEBUG
+2026-10-18 06:22:29,386 - main - INFO - Log date: 20261018
+2026-10-18 06:22:29,488 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:22:30,202 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:22:30,207 - main - INFO - Included router: routers.health.router
+2026-10-18 06:22:30,334 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:22:30,365 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:22:30,397 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:22:30,430 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:22:30,442 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:22:30,463 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:22:30,479 - main - INFO - Included router: routers.user.router
+2026-10-18 06:22:30,481 - main - INFO - === Application startup initiated ===
+2026-10-18 06:22:30,481 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:22:41,354 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 06:22:41,449 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 06:24:55,599 - main - INFO - === Logging system initialized ===
+2026-10-18 06:24:55,600 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:24:55,600 - main - INFO - Log level: DEBUG
+2026-10-18 06:24:55,600 - main - INFO - Log date: 20261018
+2026-10-18 06:24:55,694 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:24:56,356 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:24:56,358 - main - INFO - Included router: routers.health.router
+2026-10-18 06:24:56,457 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:24:56,482 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:24:56,486 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:24:56,511 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:24:57,217 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:24:57,228 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:24:57,248 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:24:57,262 - main - INFO - Included router: routers.user.router
+2026-10-18 06:24:57,264 - main - INFO - === Application startup initiated ===
+2026-10-18 06:24:57,264 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:25:45,458 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 06:25:45,531 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 06:25:53,063 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:26:27,734 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:26:44,761 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-10-18 06:26:44,762 - core.database - INFO - Using QueuePool for non-Lambda environment (pool_pre_ping=True, pool_size=5, max_overflow=5, pool_recycle=280s, pool_timeout=30s, pool_use_lifo=True)
+2026-10-18 06:26:44,809 - core.database - INFO - Database connection initialized successfully
+2026-10-18 06:27:02,462 - main - INFO - === Logging system initialized ===
+2026-10-18 06:27:02,462 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:27:02,463 - main - INFO - Log level: DEBUG
+2026-10-18 06:27:02,463 - main - INFO - Log date: 20261018
+2026-10-18 06:27:02,639 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:27:03,723 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:27:03,725 - main - INFO - Included router: routers.health.router
+2026-10-18 06:27:03,902 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:27:03,934 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:27:03,937 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:27:03,967 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:27:04,637 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:27:04,649 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:27:04,670 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:27:04,681 - main - INFO - Included router: routers.user.router
+2026-10-18 06:27:04,682 - main - INFO - === Application startup initiated ===
+2026-10-18 06:27:04,682 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:27:15,868 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 06:27:15,951 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 06:27:24,799 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-10-18 06:27:24,800 - core.database - INFO - Using QueuePool for non-Lambda environment (pool_pre_ping=True, pool_size=5, max_overflow=5, pool_recycle=280s, pool_timeout=30s, pool_use_lifo=True)
+2026-10-18 06:27:24,847 - core.database - INFO - Database connection initialized successfully
+2026-10-18 06:27:24,848 - routers.lingguang_projects - DEBUG - Querying lingguang_projectss: query=None, sort=-created_at, skip=0, limit=20, fields=None
+2026-10-18 06:27:26,040 - routers.lingguang_projects - DEBUG - Found 8 lingguang_projectss
+2026-10-18 06:28:00,692 - main - INFO - === Logging system initialized ===
+2026-10-18 06:28:00,692 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:28:00,692 - main - INFO - Log level: DEBUG
+2026-10-18 06:28:00,692 - main - INFO - Log date: 20261018
+2026-10-18 06:28:00,838 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:28:01,981 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:28:01,984 - main - INFO - Included router: routers.health.router
+2026-10-18 06:28:02,076 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:28:02,105 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:28:02,106 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:28:02,138 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:28:02,889 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:28:02,900 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:28:02,920 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:28:02,937 - main - INFO - Included router: routers.user.router
+2026-10-18 06:28:02,938 - main - INFO - === Application startup initiated ===
+2026-10-18 06:28:02,939 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:31:22,041 - main - INFO - === Logging system initialized ===
+2026-10-18 06:31:22,042 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:31:22,042 - main - INFO - Log level: DEBUG
+2026-10-18 06:31:22,042 - main - INFO - Log date: 20261018
+2026-10-18 06:31:22,188 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:31:23,286 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:31:23,290 - main - INFO - Included router: routers.health.router
+2026-10-18 06:31:23,475 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:31:23,507 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:31:23,508 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:31:23,544 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:31:24,323 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:31:24,379 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:31:24,403 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:31:24,415 - main - INFO - Included router: routers.user.router
+2026-10-18 06:31:24,416 - main - INFO - === Application startup initiated ===
+2026-10-18 06:31:24,417 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:31:33,346 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 06:31:33,413 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 06:32:54,491 - main - INFO - === Logging system initialized ===
+2026-10-18 06:32:54,491 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:32:54,491 - main - INFO - Log level: DEBUG
+2026-10-18 06:32:54,492 - main - INFO - Log date: 20261018
+2026-10-18 06:32:54,589 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:32:55,264 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:32:55,267 - main - INFO - Included router: routers.health.router
+2026-10-18 06:32:55,359 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:32:55,388 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:32:55,390 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:32:55,416 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:32:55,723 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:32:55,735 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:32:55,757 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:32:55,767 - main - INFO - Included router: routers.user.router
+2026-10-18 06:32:55,768 - main - INFO - === Application startup initiated ===
+2026-10-18 06:32:55,768 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:36:55,729 - main - INFO - === Logging system initialized ===
+2026-10-18 06:36:55,730 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:36:55,730 - main - INFO - Log level: DEBUG
+2026-10-18 06:36:55,730 - main - INFO - Log date: 20261018
+2026-10-18 06:36:55,859 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:36:56,549 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:36:56,552 - main - INFO - Included router: routers.health.router
+2026-10-18 06:36:56,658 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:36:56,685 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:36:56,687 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:36:56,718 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:36:57,003 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:36:57,053 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:36:57,078 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:36:57,090 - main - INFO - Included router: routers.user.router
+2026-10-18 06:36:57,092 - main - INFO - === Application startup initiated ===
+2026-10-18 06:36:57,092 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:36:57,109 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 06:36:57,183 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 06:37:39,520 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:38:10,651 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:39:28,838 - main - INFO - === Logging system initialized ===
+2026-10-18 06:39:28,839 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:39:28,839 - main - INFO - Log level: DEBUG
+2026-10-18 06:39:28,839 - main - INFO - Log date: 20261018
+2026-10-18 06:39:29,015 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:39:32,211 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:39:32,215 - main - INFO - Included router: routers.health.router
+2026-10-18 06:39:32,330 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:39:32,380 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:39:32,382 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:39:32,411 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:39:32,920 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:39:32,987 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:39:33,087 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:39:33,107 - main - INFO - Included router: routers.user.router
+2026-10-18 06:39:33,108 - main - INFO - === Application startup initiated ===
+2026-10-18 06:39:33,175 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:42:08,055 - main - INFO - === Logging system initialized ===
+2026-10-18 06:42:08,055 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:42:08,055 - main - INFO - Log level: DEBUG
+2026-10-18 06:42:08,056 - main - INFO - Log date: 20261018
+2026-10-18 06:42:08,217 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:42:09,319 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:42:09,322 - main - INFO - Included router: routers.health.router
+2026-10-18 06:42:09,583 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:42:09,610 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:42:09,612 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:42:09,638 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:42:09,953 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:42:09,966 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:42:09,994 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:42:10,044 - main - INFO - Included router: routers.user.router
+2026-10-18 06:42:10,046 - main - INFO - === Application startup initiated ===
+2026-10-18 06:42:10,046 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:42:22,535 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 06:42:22,612 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 06:42:47,911 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:43:14,782 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:44:24,392 - main - INFO - === Logging system initialized ===
+2026-10-18 06:44:24,393 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:44:24,393 - main - INFO - Log level: DEBUG
+2026-10-18 06:44:24,393 - main - INFO - Log date: 20261018
+2026-10-18 06:44:24,527 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:44:25,688 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:44:25,692 - main - INFO - Included router: routers.health.router
+2026-10-18 06:44:25,840 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:44:25,905 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:44:25,906 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:44:25,976 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:44:26,497 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:44:26,514 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:44:26,584 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:44:26,598 - main - INFO - Included router: routers.user.router
+2026-10-18 06:44:26,599 - main - INFO - === Application startup initiated ===
+2026-10-18 06:44:26,599 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:46:59,934 - main - INFO - === Logging system initialized ===
+2026-10-18 06:46:59,935 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:46:59,935 - main - INFO - Log level: DEBUG
+2026-10-18 06:46:59,935 - main - INFO - Log date: 20261018
+2026-10-18 06:47:00,087 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:47:01,477 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:47:01,482 - main - INFO - Included router: routers.health.router
+2026-10-18 06:47:01,677 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:47:01,708 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:47:01,709 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:47:01,743 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:47:02,056 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:47:02,071 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:47:02,101 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:47:02,116 - main - INFO - Included router: routers.user.router
+2026-10-18 06:47:02,118 - main - INFO - === Application startup initiated ===
+2026-10-18 06:47:02,119 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:47:23,287 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 06:47:23,354 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 06:49:22,901 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:49:41,629 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-10-18 06:49:41,630 - core.database - INFO - Using QueuePool for non-Lambda environment (pool_pre_ping=True, pool_size=5, max_overflow=5, pool_recycle=280s, pool_timeout=30s, pool_use_lifo=True)
+2026-10-18 06:49:41,676 - core.database - INFO - Database connection initialized successfully
+2026-10-18 06:49:55,481 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:51:15,834 - main - INFO - === Logging system initialized ===
+2026-10-18 06:51:15,834 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:51:15,834 - main - INFO - Log level: DEBUG
+2026-10-18 06:51:15,834 - main - INFO - Log date: 20261018
+2026-10-18 06:51:16,020 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:51:17,110 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:51:17,113 - main - INFO - Included router: routers.health.router
+2026-10-18 06:51:17,303 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:51:17,330 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:51:17,331 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:51:17,359 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:51:17,622 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:51:17,635 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:51:17,655 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:51:17,664 - main - INFO - Included router: routers.user.router
+2026-10-18 06:51:17,665 - main - INFO - === Application startup initiated ===
+2026-10-18 06:51:17,665 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:55:43,887 - main - INFO - === Logging system initialized ===
+2026-10-18 06:55:43,887 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:55:43,887 - main - INFO - Log level: DEBUG
+2026-10-18 06:55:43,887 - main - INFO - Log date: 20261018
+2026-10-18 06:55:44,025 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:55:45,318 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:55:45,321 - main - INFO - Included router: routers.health.router
+2026-10-18 06:55:45,426 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:55:45,453 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:55:45,454 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:55:45,482 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:55:45,886 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:55:45,903 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:55:45,975 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:55:45,991 - main - INFO - Included router: routers.user.router
+2026-10-18 06:55:45,993 - main - INFO - === Application startup initiated ===
+2026-10-18 06:55:45,993 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:55:52,217 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 06:55:52,298 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 06:56:47,322 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:57:17,986 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 06:57:55,108 - main - INFO - === Logging system initialized ===
+2026-10-18 06:57:55,108 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:57:55,108 - main - INFO - Log level: DEBUG
+2026-10-18 06:57:55,108 - main - INFO - Log date: 20261018
+2026-10-18 06:57:55,284 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:57:56,590 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:57:56,595 - main - INFO - Included router: routers.health.router
+2026-10-18 06:57:56,791 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:57:56,825 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:57:56,826 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:57:56,901 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:57:57,347 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:57:57,359 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:57:57,379 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:57:57,390 - main - INFO - Included router: routers.user.router
+2026-10-18 06:57:57,392 - main - INFO - === Application startup initiated ===
+2026-10-18 06:57:57,392 - main - INFO - === Application startup completed successfully ===
+2026-10-18 06:58:23,596 - main - INFO - === Logging system initialized ===
+2026-10-18 06:58:23,596 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 06:58:23,596 - main - INFO - Log level: DEBUG
+2026-10-18 06:58:23,596 - main - INFO - Log date: 20261018
+2026-10-18 06:58:23,778 - main - INFO - Included router: routers.aihub.router
+2026-10-18 06:58:25,227 - main - INFO - Included router: routers.auth.router
+2026-10-18 06:58:25,231 - main - INFO - Included router: routers.health.router
+2026-10-18 06:58:25,329 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 06:58:25,355 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 06:58:25,356 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 06:58:25,382 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 06:58:25,643 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 06:58:25,653 - main - INFO - Included router: routers.settings.router
+2026-10-18 06:58:25,672 - main - INFO - Included router: routers.storage.router
+2026-10-18 06:58:25,681 - main - INFO - Included router: routers.user.router
+2026-10-18 06:58:25,682 - main - INFO - === Application startup initiated ===
+2026-10-18 06:58:25,683 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:01:11,394 - main - INFO - === Logging system initialized ===
+2026-10-18 07:01:11,394 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:01:11,394 - main - INFO - Log level: DEBUG
+2026-10-18 07:01:11,394 - main - INFO - Log date: 20261018
+2026-10-18 07:01:11,603 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:01:13,578 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:01:13,581 - main - INFO - Included router: routers.health.router
+2026-10-18 07:01:13,892 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:01:13,998 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:01:14,076 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:01:14,106 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:01:14,702 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:01:14,779 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:01:14,806 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:01:14,896 - main - INFO - Included router: routers.user.router
+2026-10-18 07:01:14,898 - main - INFO - === Application startup initiated ===
+2026-10-18 07:01:14,898 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:01:22,877 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 07:01:22,994 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 07:01:41,993 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 07:02:09,516 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 07:03:16,677 - main - INFO - === Logging system initialized ===
+2026-10-18 07:03:16,677 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:03:16,677 - main - INFO - Log level: DEBUG
+2026-10-18 07:03:16,677 - main - INFO - Log date: 20261018
+2026-10-18 07:03:16,839 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:03:18,326 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:03:18,328 - main - INFO - Included router: routers.health.router
+2026-10-18 07:03:18,426 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:03:18,452 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:03:18,454 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:03:18,484 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:03:18,753 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:03:18,765 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:03:18,785 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:03:18,796 - main - INFO - Included router: routers.user.router
+2026-10-18 07:03:18,797 - main - INFO - === Application startup initiated ===
+2026-10-18 07:03:18,797 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:04:46,101 - main - INFO - === Logging system initialized ===
+2026-10-18 07:04:46,101 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:04:46,101 - main - INFO - Log level: DEBUG
+2026-10-18 07:04:46,101 - main - INFO - Log date: 20261018
+2026-10-18 07:04:46,290 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:04:47,530 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:04:47,533 - main - INFO - Included router: routers.health.router
+2026-10-18 07:04:47,726 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:04:47,784 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:04:47,785 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:04:47,813 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:04:48,205 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:04:48,217 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:04:48,289 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:04:48,302 - main - INFO - Included router: routers.user.router
+2026-10-18 07:04:48,303 - main - INFO - === Application startup initiated ===
+2026-10-18 07:04:48,303 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:04:56,280 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 07:04:56,365 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 07:05:30,926 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 07:06:12,017 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 07:07:20,209 - main - INFO - === Logging system initialized ===
+2026-10-18 07:07:20,210 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:07:20,210 - main - INFO - Log level: DEBUG
+2026-10-18 07:07:20,210 - main - INFO - Log date: 20261018
+2026-10-18 07:07:20,392 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:07:21,516 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:07:21,519 - main - INFO - Included router: routers.health.router
+2026-10-18 07:07:21,717 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:07:21,787 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:07:21,788 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:07:21,816 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:07:22,306 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:07:22,320 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:07:22,387 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:07:22,400 - main - INFO - Included router: routers.user.router
+2026-10-18 07:07:22,402 - main - INFO - === Application startup initiated ===
+2026-10-18 07:07:22,402 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:10:06,076 - main - INFO - === Logging system initialized ===
+2026-10-18 07:10:06,077 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:10:06,077 - main - INFO - Log level: DEBUG
+2026-10-18 07:10:06,077 - main - INFO - Log date: 20261018
+2026-10-18 07:10:06,220 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:10:07,610 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:10:07,613 - main - INFO - Included router: routers.health.router
+2026-10-18 07:10:07,809 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:10:07,841 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:10:07,843 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:10:07,874 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:10:08,146 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:10:08,162 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:10:08,186 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:10:08,200 - main - INFO - Included router: routers.user.router
+2026-10-18 07:10:08,201 - main - INFO - === Application startup initiated ===
+2026-10-18 07:10:08,201 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:10:16,739 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 07:10:16,816 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 07:10:56,612 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 07:11:29,675 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 07:11:31,675 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-10-18 07:11:31,677 - core.database - INFO - Using QueuePool for non-Lambda environment (pool_pre_ping=True, pool_size=5, max_overflow=5, pool_recycle=280s, pool_timeout=30s, pool_use_lifo=True)
+2026-10-18 07:11:31,727 - core.database - INFO - Database connection initialized successfully
+2026-10-18 07:12:44,612 - main - INFO - === Logging system initialized ===
+2026-10-18 07:12:44,612 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:12:44,612 - main - INFO - Log level: DEBUG
+2026-10-18 07:12:44,612 - main - INFO - Log date: 20261018
+2026-10-18 07:12:44,812 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:12:46,190 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:12:46,195 - main - INFO - Included router: routers.health.router
+2026-10-18 07:12:46,399 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:12:46,428 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:12:46,430 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:12:46,507 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:12:47,484 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:12:47,498 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:12:47,600 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:12:47,617 - main - INFO - Included router: routers.user.router
+2026-10-18 07:12:47,618 - main - INFO - === Application startup initiated ===
+2026-10-18 07:12:47,675 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:14:53,425 - main - INFO - === Logging system initialized ===
+2026-10-18 07:14:53,425 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:14:53,425 - main - INFO - Log level: DEBUG
+2026-10-18 07:14:53,425 - main - INFO - Log date: 20261018
+2026-10-18 07:14:53,612 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:14:55,079 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:14:55,083 - main - INFO - Included router: routers.health.router
+2026-10-18 07:14:55,179 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:14:55,203 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:14:55,206 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:14:55,233 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:14:55,484 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:14:55,495 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:14:55,515 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:14:55,527 - main - INFO - Included router: routers.user.router
+2026-10-18 07:14:55,528 - main - INFO - === Application startup initiated ===
+2026-10-18 07:14:55,528 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:15:02,077 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 07:15:02,158 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 07:17:20,744 - core.config - DEBUG - Read dynamic attribute frontend_url from environment variable FRONTEND_URL
+2026-10-18 07:17:20,744 - core.config - DEBUG - Read dynamic attribute oidc_issuer_url from environment variable OIDC_ISSUER_URL
+2026-10-18 07:17:22,822 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 07:17:25,857 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-10-18 07:17:25,858 - core.database - INFO - Using QueuePool for non-Lambda environment (pool_pre_ping=True, pool_size=5, max_overflow=5, pool_recycle=280s, pool_timeout=30s, pool_use_lifo=True)
+2026-10-18 07:17:25,906 - core.database - INFO - Database connection initialized successfully
+2026-10-18 07:17:27,369 - routers.auth - DEBUG - [get_dynamic_backend_url] mgx-external-domain=None, x-forwarded-host=elac3-14fcc3a5c64e4d27af95470fdb50e6f9-preview.app.atoms.dev, host=localhost, scheme=https, dynamic_url=https://elac3-14fcc3a5c64e4d27af95470fdb50e6f9-preview.app.atoms.dev
+2026-10-18 07:17:27,370 - routers.auth - INFO - [login] Starting OIDC flow with redirect_uri=https://elac3-14fcc3a5c64e4d27af95470fdb50e6f9-preview.app.atoms.dev/api/v1/auth/callback
+2026-10-18 07:17:27,370 - core.config - DEBUG - Read dynamic attribute oidc_client_id from environment variable OIDC_CLIENT_ID
+2026-10-18 07:17:27,370 - core.config - DEBUG - Read dynamic attribute oidc_scope from environment variable OIDC_SCOPE
+2026-10-18 07:22:05,529 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 07:22:28,478 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 07:23:47,832 - main - INFO - === Logging system initialized ===
+2026-10-18 07:23:47,832 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:23:47,832 - main - INFO - Log level: DEBUG
+2026-10-18 07:23:47,832 - main - INFO - Log date: 20261018
+2026-10-18 07:23:48,026 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:23:49,511 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:23:49,515 - main - INFO - Included router: routers.health.router
+2026-10-18 07:23:49,641 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:23:49,690 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:23:49,692 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:23:49,726 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:23:49,996 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:23:50,016 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:23:50,063 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:23:50,075 - main - INFO - Included router: routers.user.router
+2026-10-18 07:23:50,076 - main - INFO - === Application startup initiated ===
+2026-10-18 07:23:50,077 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:28:05,693 - main - INFO - === Logging system initialized ===
+2026-10-18 07:28:05,693 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:28:05,693 - main - INFO - Log level: DEBUG
+2026-10-18 07:28:05,693 - main - INFO - Log date: 20261018
+2026-10-18 07:28:05,891 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:28:07,308 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:28:07,313 - main - INFO - Included router: routers.health.router
+2026-10-18 07:28:07,590 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:28:07,685 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:28:07,686 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:28:07,776 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:28:08,181 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:28:08,198 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:28:08,225 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:28:08,242 - main - INFO - Included router: routers.user.router
+2026-10-18 07:28:08,243 - main - INFO - === Application startup initiated ===
+2026-10-18 07:28:08,244 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:28:15,390 - dependencies.auth - DEBUG - Authentication required for request GET /api/v1/auth/me
+2026-10-18 07:32:09,556 - main - INFO - === Logging system initialized ===
+2026-10-18 07:32:09,556 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:32:09,556 - main - INFO - Log level: DEBUG
+2026-10-18 07:32:09,556 - main - INFO - Log date: 20261018
+2026-10-18 07:32:09,689 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:32:10,564 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:32:10,567 - main - INFO - Included router: routers.health.router
+2026-10-18 07:32:10,859 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 07:32:10,957 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:32:10,988 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:32:10,989 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:32:11,015 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:32:11,070 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:32:11,084 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:32:11,109 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:32:11,122 - main - INFO - Included router: routers.user.router
+2026-10-18 07:32:11,124 - main - INFO - === Application startup initiated ===
+2026-10-18 07:32:11,124 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:32:39,417 - main - INFO - === Logging system initialized ===
+2026-10-18 07:32:39,418 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:32:39,418 - main - INFO - Log level: DEBUG
+2026-10-18 07:32:39,418 - main - INFO - Log date: 20261018
+2026-10-18 07:32:39,518 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:32:40,196 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:32:40,201 - main - INFO - Included router: routers.health.router
+2026-10-18 07:32:40,475 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 07:32:40,526 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:32:40,545 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:32:40,547 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:32:40,571 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:32:40,610 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:32:40,621 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:32:40,642 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:32:40,659 - main - INFO - Included router: routers.user.router
+2026-10-18 07:32:40,660 - main - INFO - === Application startup initiated ===
+2026-10-18 07:32:40,660 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:33:35,307 - main - INFO - === Logging system initialized ===
+2026-10-18 07:33:35,308 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:33:35,308 - main - INFO - Log level: DEBUG
+2026-10-18 07:33:35,308 - main - INFO - Log date: 20261018
+2026-10-18 07:33:35,404 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:33:36,106 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:33:36,111 - main - INFO - Included router: routers.health.router
+2026-10-18 07:33:36,403 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 07:33:36,422 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:33:36,428 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:33:36,429 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:33:36,444 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:33:36,481 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:33:36,492 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:33:36,514 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:33:36,526 - main - INFO - Included router: routers.user.router
+2026-10-18 07:33:36,527 - main - INFO - === Application startup initiated ===
+2026-10-18 07:33:36,527 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:33:58,233 - main - INFO - === Logging system initialized ===
+2026-10-18 07:33:58,233 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:33:58,233 - main - INFO - Log level: DEBUG
+2026-10-18 07:33:58,233 - main - INFO - Log date: 20261018
+2026-10-18 07:33:58,387 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:33:59,259 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:33:59,262 - main - INFO - Included router: routers.health.router
+2026-10-18 07:33:59,542 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 07:33:59,565 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:33:59,579 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:33:59,580 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:33:59,593 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:33:59,634 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:33:59,647 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:33:59,667 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:33:59,681 - main - INFO - Included router: routers.user.router
+2026-10-18 07:33:59,682 - main - INFO - === Application startup initiated ===
+2026-10-18 07:33:59,683 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:35:55,792 - main - INFO - === Logging system initialized ===
+2026-10-18 07:35:55,792 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:35:55,792 - main - INFO - Log level: DEBUG
+2026-10-18 07:35:55,792 - main - INFO - Log date: 20261018
+2026-10-18 07:35:55,996 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:35:57,578 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:35:57,583 - main - INFO - Included router: routers.health.router
+2026-10-18 07:35:58,149 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 07:35:58,178 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:35:58,186 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:35:58,187 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:35:58,202 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:35:58,237 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:35:58,251 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:35:58,276 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:35:58,291 - main - INFO - Included router: routers.user.router
+2026-10-18 07:35:58,292 - main - INFO - === Application startup initiated ===
+2026-10-18 07:35:58,292 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:36:36,089 - main - INFO - === Logging system initialized ===
+2026-10-18 07:36:36,089 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:36:36,089 - main - INFO - Log level: DEBUG
+2026-10-18 07:36:36,089 - main - INFO - Log date: 20261018
+2026-10-18 07:36:36,291 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:36:37,804 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:36:37,809 - main - INFO - Included router: routers.health.router
+2026-10-18 07:36:38,230 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 07:36:38,250 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:36:38,257 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:36:38,259 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:36:38,271 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:36:38,300 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:36:38,311 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:36:38,337 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:36:38,352 - main - INFO - Included router: routers.user.router
+2026-10-18 07:36:38,353 - main - INFO - === Application startup initiated ===
+2026-10-18 07:36:38,353 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:40:03,992 - main - INFO - === Logging system initialized ===
+2026-10-18 07:40:03,992 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:40:03,992 - main - INFO - Log level: DEBUG
+2026-10-18 07:40:03,993 - main - INFO - Log date: 20261018
+2026-10-18 07:40:04,218 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:40:05,597 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:40:05,602 - main - INFO - Included router: routers.health.router
+2026-10-18 07:40:06,034 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 07:40:06,093 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:40:06,100 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:40:06,105 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:40:06,117 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:40:06,187 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:40:06,197 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:40:06,217 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:40:06,231 - main - INFO - Included router: routers.user.router
+2026-10-18 07:40:06,233 - main - INFO - === Application startup initiated ===
+2026-10-18 07:40:06,275 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:40:29,120 - main - INFO - === Logging system initialized ===
+2026-10-18 07:40:29,120 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:40:29,121 - main - INFO - Log level: DEBUG
+2026-10-18 07:40:29,121 - main - INFO - Log date: 20261018
+2026-10-18 07:40:29,495 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:40:30,445 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:40:30,448 - main - INFO - Included router: routers.health.router
+2026-10-18 07:40:30,715 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 07:40:30,740 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:40:30,747 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:40:30,748 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:40:30,765 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:40:30,804 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:40:30,815 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:40:30,847 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:40:30,866 - main - INFO - Included router: routers.user.router
+2026-10-18 07:40:30,875 - main - INFO - === Application startup initiated ===
+2026-10-18 07:40:30,875 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:40:47,310 - main - INFO - === Logging system initialized ===
+2026-10-18 07:40:47,310 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:40:47,310 - main - INFO - Log level: DEBUG
+2026-10-18 07:40:47,310 - main - INFO - Log date: 20261018
+2026-10-18 07:40:47,605 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:40:48,500 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:40:48,505 - main - INFO - Included router: routers.health.router
+2026-10-18 07:40:48,762 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 07:40:48,793 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:40:48,800 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:40:48,803 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:40:48,819 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:40:48,847 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:40:48,858 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:40:48,885 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:40:48,897 - main - INFO - Included router: routers.user.router
+2026-10-18 07:40:48,899 - main - INFO - === Application startup initiated ===
+2026-10-18 07:40:48,899 - main - INFO - === Application startup completed successfully ===
+2026-10-18 07:43:11,921 - main - INFO - === Logging system initialized ===
+2026-10-18 07:43:11,921 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 07:43:11,921 - main - INFO - Log level: DEBUG
+2026-10-18 07:43:11,922 - main - INFO - Log date: 20261018
+2026-10-18 07:43:12,183 - main - INFO - Included router: routers.aihub.router
+2026-10-18 07:43:13,718 - main - INFO - Included router: routers.auth.router
+2026-10-18 07:43:13,779 - main - INFO - Included router: routers.health.router
+2026-10-18 07:43:14,091 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 07:43:14,129 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 07:43:14,135 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 07:43:14,137 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 07:43:14,151 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 07:43:14,192 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 07:43:14,207 - main - INFO - Included router: routers.settings.router
+2026-10-18 07:43:14,236 - main - INFO - Included router: routers.storage.router
+2026-10-18 07:43:14,258 - main - INFO - Included router: routers.user.router
+2026-10-18 07:43:14,260 - main - INFO - === Application startup initiated ===
+2026-10-18 07:43:14,260 - main - INFO - === Application startup completed successfully ===
+2026-10-18 08:24:44,474 - main - INFO - === Logging system initialized ===
+2026-10-18 08:24:44,475 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 08:24:44,475 - main - INFO - Log level: DEBUG
+2026-10-18 08:24:44,475 - main - INFO - Log date: 20261018
+2026-10-18 08:24:44,734 - main - INFO - Included router: routers.aihub.router
+2026-10-18 08:24:45,816 - main - INFO - Included router: routers.auth.router
+2026-10-18 08:24:45,870 - main - INFO - Included router: routers.health.router
+2026-10-18 08:24:46,258 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 08:24:46,365 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 08:24:46,399 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 08:24:46,426 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 08:24:46,458 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 08:24:46,523 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 08:24:46,582 - main - INFO - Included router: routers.settings.router
+2026-10-18 08:24:46,778 - main - INFO - Included router: routers.storage.router
+2026-10-18 08:24:46,887 - main - INFO - Included router: routers.user.router
+2026-10-18 08:24:46,888 - main - INFO - === Application startup initiated ===
+2026-10-18 08:24:46,888 - main - INFO - === Application startup completed successfully ===
+2026-10-18 08:27:01,730 - main - INFO - === Logging system initialized ===
+2026-10-18 08:27:01,731 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 08:27:01,731 - main - INFO - Log level: DEBUG
+2026-10-18 08:27:01,731 - main - INFO - Log date: 20261018
+2026-10-18 08:27:01,845 - main - INFO - Included router: routers.aihub.router
+2026-10-18 08:27:02,636 - main - INFO - Included router: routers.auth.router
+2026-10-18 08:27:02,641 - main - INFO - Included router: routers.health.router
+2026-10-18 08:27:02,888 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 08:27:02,925 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 08:27:02,932 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 08:27:02,933 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 08:27:02,947 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 08:27:02,989 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 08:27:03,003 - main - INFO - Included router: routers.settings.router
+2026-10-18 08:27:03,062 - main - INFO - Included router: routers.storage.router
+2026-10-18 08:27:03,076 - main - INFO - Included router: routers.user.router
+2026-10-18 08:27:03,078 - main - INFO - === Application startup initiated ===
+2026-10-18 08:27:03,078 - main - INFO - === Application startup completed successfully ===
+2026-10-18 08:27:38,529 - main - INFO - === Logging system initialized ===
+2026-10-18 08:27:38,529 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 08:27:38,529 - main - INFO - Log level: DEBUG
+2026-10-18 08:27:38,529 - main - INFO - Log date: 20261018
+2026-10-18 08:27:38,634 - main - INFO - Included router: routers.aihub.router
+2026-10-18 08:27:39,483 - main - INFO - Included router: routers.auth.router
+2026-10-18 08:27:39,486 - main - INFO - Included router: routers.health.router
+2026-10-18 08:27:39,736 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 08:27:39,758 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 08:27:39,766 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 08:27:39,767 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 08:27:39,782 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 08:27:39,823 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 08:27:39,833 - main - INFO - Included router: routers.settings.router
+2026-10-18 08:27:39,854 - main - INFO - Included router: routers.storage.router
+2026-10-18 08:27:39,871 - main - INFO - Included router: routers.user.router
+2026-10-18 08:27:39,873 - main - INFO - === Application startup initiated ===
+2026-10-18 08:27:39,873 - main - INFO - === Application startup completed successfully ===
+2026-10-18 08:29:25,940 - main - INFO - === Logging system initialized ===
+2026-10-18 08:29:25,941 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 08:29:25,941 - main - INFO - Log level: DEBUG
+2026-10-18 08:29:25,941 - main - INFO - Log date: 20261018
+2026-10-18 08:29:26,051 - main - INFO - Included router: routers.aihub.router
+2026-10-18 08:29:26,942 - main - INFO - Included router: routers.auth.router
+2026-10-18 08:29:26,945 - main - INFO - Included router: routers.health.router
+2026-10-18 08:29:27,226 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 08:29:27,258 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 08:29:27,264 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 08:29:27,265 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 08:29:27,287 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 08:29:27,331 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 08:29:27,344 - main - INFO - Included router: routers.settings.router
+2026-10-18 08:29:27,367 - main - INFO - Included router: routers.storage.router
+2026-10-18 08:29:27,384 - main - INFO - Included router: routers.user.router
+2026-10-18 08:29:27,385 - main - INFO - === Application startup initiated ===
+2026-10-18 08:29:27,385 - main - INFO - === Application startup completed successfully ===
+2026-10-18 08:30:14,550 - main - INFO - === Logging system initialized ===
+2026-10-18 08:30:14,550 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 08:30:14,551 - main - INFO - Log level: DEBUG
+2026-10-18 08:30:14,551 - main - INFO - Log date: 20261018
+2026-10-18 08:30:14,658 - main - INFO - Included router: routers.aihub.router
+2026-10-18 08:30:15,609 - main - INFO - Included router: routers.auth.router
+2026-10-18 08:30:15,611 - main - INFO - Included router: routers.health.router
+2026-10-18 08:30:15,885 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 08:30:15,913 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 08:30:15,929 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 08:30:15,931 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 08:30:15,945 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 08:30:15,977 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 08:30:15,988 - main - INFO - Included router: routers.settings.router
+2026-10-18 08:30:16,057 - main - INFO - Included router: routers.storage.router
+2026-10-18 08:30:16,074 - main - INFO - Included router: routers.user.router
+2026-10-18 08:30:16,075 - main - INFO - === Application startup initiated ===
+2026-10-18 08:30:16,075 - main - INFO - === Application startup completed successfully ===
+2026-10-18 08:32:05,188 - main - INFO - === Logging system initialized ===
+2026-10-18 08:32:05,188 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 08:32:05,188 - main - INFO - Log level: DEBUG
+2026-10-18 08:32:05,188 - main - INFO - Log date: 20261018
+2026-10-18 08:32:05,296 - main - INFO - Included router: routers.aihub.router
+2026-10-18 08:32:06,115 - main - INFO - Included router: routers.auth.router
+2026-10-18 08:32:06,118 - main - INFO - Included router: routers.health.router
+2026-10-18 08:32:06,437 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 08:32:06,456 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 08:32:06,463 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 08:32:06,464 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 08:32:06,478 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 08:32:06,512 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 08:32:06,538 - main - INFO - Included router: routers.settings.router
+2026-10-18 08:32:06,569 - main - INFO - Included router: routers.storage.router
+2026-10-18 08:32:06,585 - main - INFO - Included router: routers.user.router
+2026-10-18 08:32:06,586 - main - INFO - === Application startup initiated ===
+2026-10-18 08:32:06,587 - main - INFO - === Application startup completed successfully ===
+2026-10-18 08:33:14,242 - core.config - DEBUG - Read dynamic attribute database_url from environment variable DATABASE_URL
+2026-10-18 08:33:14,243 - core.database - INFO - Using QueuePool for non-Lambda environment (pool_pre_ping=True, pool_size=5, max_overflow=5, pool_recycle=280s, pool_timeout=30s, pool_use_lifo=True)
+2026-10-18 08:33:14,363 - core.database - INFO - Database connection initialized successfully
+2026-10-18 08:33:15,767 - routers.auth - DEBUG - [get_dynamic_backend_url] mgx-external-domain=None, x-forwarded-host=elac3-14fcc3a5c64e4d27af95470fdb50e6f9-preview.app.atoms.dev, host=localhost, scheme=https, dynamic_url=https://elac3-14fcc3a5c64e4d27af95470fdb50e6f9-preview.app.atoms.dev
+2026-10-18 08:33:15,768 - routers.auth - INFO - [login] Starting OIDC flow with redirect_uri=https://elac3-14fcc3a5c64e4d27af95470fdb50e6f9-preview.app.atoms.dev/api/v1/auth/callback
+2026-10-18 08:33:15,768 - core.config - DEBUG - Read dynamic attribute oidc_client_id from environment variable OIDC_CLIENT_ID
+2026-10-18 08:33:15,768 - core.config - DEBUG - Read dynamic attribute oidc_scope from environment variable OIDC_SCOPE
+2026-10-18 08:33:15,768 - core.config - DEBUG - Read dynamic attribute oidc_issuer_url from environment variable OIDC_ISSUER_URL
+2026-10-18 08:33:22,943 - routers.auth - DEBUG - [get_dynamic_backend_url] mgx-external-domain=None, x-forwarded-host=elac3-14fcc3a5c64e4d27af95470fdb50e6f9-preview.app.atoms.dev, host=localhost, scheme=https, dynamic_url=https://elac3-14fcc3a5c64e4d27af95470fdb50e6f9-preview.app.atoms.dev
+2026-10-18 08:33:23,601 - routers.auth - INFO - [callback] Exchanging code for tokens with redirect_uri=https://elac3-14fcc3a5c64e4d27af95470fdb50e6f9-preview.app.atoms.dev/api/v1/auth/callback
+2026-10-18 08:33:23,601 - core.config - DEBUG - Read dynamic attribute oidc_client_secret from environment variable OIDC_CLIENT_SECRET
+2026-10-18 08:33:23,820 - httpcore.connection - DEBUG - connect_tcp.started host='auth.atoms.dev' port=443 local_address=None timeout=5.0 socket_options=None
+2026-10-18 08:33:23,836 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f08319a78e0>
+2026-10-18 08:33:23,836 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f082f39c6c0> server_hostname='auth.atoms.dev' timeout=5.0
+2026-10-18 08:33:23,844 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f08319a7d30>
+2026-10-18 08:33:23,844 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-10-18 08:33:23,845 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-10-18 08:33:23,845 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-10-18 08:33:23,845 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-10-18 08:33:23,845 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-10-18 08:33:23,937 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 18 Oct 2026 15:33:23 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'a4c899e80e334e81-LAX'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'req-arrive-time', b'1792337603867'), (b'req-cost-time', b'65'), (b'resp-start-time', b'1792337603932'), (b'x-envoy-upstream-service-time', b'64'), (b'x-mgx-request-id', b'a3c998e7-e608-4a5e-b88e-2d93ea93343c'), (b'x-request-id', b'a3c998e7-e608-4a5e-b88e-2d93ea93343c'), (b'x-response-time', b'0.059s'), (b'Content-Encoding', b'gzip')])
+2026-10-18 08:33:23,938 - httpx - INFO - HTTP Request: POST https://auth.atoms.dev/api/v1/oidc/token "HTTP/1.1 200 OK"
+2026-10-18 08:33:23,939 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-10-18 08:33:23,940 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-10-18 08:33:23,940 - httpcore.http11 - DEBUG - response_closed.started
+2026-10-18 08:33:23,941 - httpcore.http11 - DEBUG - response_closed.complete
+2026-10-18 08:33:23,941 - httpcore.connection - DEBUG - close.started
+2026-10-18 08:33:23,942 - httpcore.connection - DEBUG - close.complete
+2026-10-18 08:33:24,142 - core.auth - INFO - Fetching JWKS from: https://auth.atoms.dev/api/v1/oidc/.well-known/jwks.json
+2026-10-18 08:33:24,144 - httpcore.connection - DEBUG - connect_tcp.started host='auth.atoms.dev' port=443 local_address=None timeout=60.0 socket_options=None
+2026-10-18 08:33:24,157 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f082c41a7d0>
+2026-10-18 08:33:24,158 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x7f082c6b38c0> server_hostname='auth.atoms.dev' timeout=60.0
+2026-10-18 08:33:24,166 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x7f082c41a710>
+2026-10-18 08:33:24,166 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'GET']>
+2026-10-18 08:33:24,167 - httpcore.http11 - DEBUG - send_request_headers.complete
+2026-10-18 08:33:24,167 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'GET']>
+2026-10-18 08:33:24,167 - httpcore.http11 - DEBUG - send_request_body.complete
+2026-10-18 08:33:24,167 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'GET']>
+2026-10-18 08:33:24,192 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 18 Oct 2026 15:33:24 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'CF-Ray', b'a4c899ea0c4cff84-LAX'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Cache-Control', b'public, max-age=3600'), (b'Server', b'cloudflare'), (b'req-arrive-time', b'1792337604182'), (b'req-cost-time', b'5'), (b'resp-start-time', b'1792337604188'), (b'x-envoy-upstream-service-time', b'4'), (b'x-mgx-request-id', b'1ad4e579-fc37-4cb0-819d-9bd817959d3e'), (b'x-request-id', b'1ad4e579-fc37-4cb0-819d-9bd817959d3e'), (b'x-response-time', b'0.001s'), (b'Content-Encoding', b'gzip')])
+2026-10-18 08:33:24,193 - httpx - INFO - HTTP Request: GET https://auth.atoms.dev/api/v1/oidc/.well-known/jwks.json "HTTP/1.1 200 OK"
+2026-10-18 08:33:24,193 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'GET']>
+2026-10-18 08:33:24,193 - httpcore.http11 - DEBUG - receive_response_body.complete
+2026-10-18 08:33:24,194 - httpcore.http11 - DEBUG - response_closed.started
+2026-10-18 08:33:24,194 - httpcore.http11 - DEBUG - response_closed.complete
+2026-10-18 08:33:24,194 - core.auth - INFO - Successfully fetched JWKS with 1 keys
+2026-10-18 08:33:24,194 - httpcore.connection - DEBUG - close.started
+2026-10-18 08:33:24,194 - httpcore.connection - DEBUG - close.complete
+2026-10-18 08:33:24,204 - services.auth - DEBUG - [DB_OP] Starting get_or_create_user - platform_sub: 1637056
+2026-10-18 08:33:24,561 - services.auth - DEBUG - [DB_OP] User lookup completed in 0.3567s - found: True
+2026-10-18 08:33:24,561 - core.config - DEBUG - Read dynamic attribute admin_user_id from environment variable ADMIN_USER_ID
+2026-10-18 08:33:24,561 - services.auth - DEBUG - [DB_OP] Starting user commit/refresh
+2026-10-18 08:33:25,040 - services.auth - DEBUG - [DB_OP] User commit/refresh completed in 0.4789s
+2026-10-18 08:33:25,041 - core.config - DEBUG - Read dynamic attribute jwt_expire_minutes from environment variable JWT_EXPIRE_MINUTES
+2026-10-18 08:33:25,041 - core.config - DEBUG - Read dynamic attribute jwt_secret_key from environment variable JWT_SECRET_KEY
+2026-10-18 08:33:25,041 - core.config - DEBUG - Read dynamic attribute jwt_algorithm from environment variable JWT_ALGORITHM
+2026-10-18 08:33:25,041 - routers.auth - INFO - [callback] OIDC callback successful, redirecting to https://elac3-14fcc3a5c64e4d27af95470fdb50e6f9-preview.app.atoms.dev/auth/callback?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNjM3MDU2IiwiZW1haWwiOiIyNTExNTcyMjc1QHFxLmNvbSIsInJvbGUiOiJhZG1pbiIsIm5hbWUiOiIyNTExNTcyMjc1IiwibGFzdF9sb2dpbiI6IjIwMjYtMTAtMThUMTU6MzM6MjQuNTYxNjc5KzAwOjAwIiwiZXhwIjoxNzk0OTI5NjA1LCJpYXQiOjE3OTIzMzc2MDUsIm5iZiI6MTc5MjMzNzYwNX0.X00n5dNrd6j2FYeRDgWuc3wAOJgkd6Tb7h11aH9lxak&expires_at=1794929605&token_type=Bearer
+2026-10-18 08:33:42,670 - core.config - DEBUG - Read dynamic attribute app_ai_base_url from environment variable APP_AI_BASE_URL
+2026-10-18 08:33:42,670 - core.config - DEBUG - Read dynamic attribute app_ai_key from environment variable APP_AI_KEY
+2026-10-18 18:37:17,948 - main - INFO - === Logging system initialized ===
+2026-10-18 18:37:17,949 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 18:37:17,949 - main - INFO - Log level: DEBUG
+2026-10-18 18:37:17,949 - main - INFO - Log date: 20261018
+2026-10-18 18:37:18,235 - main - INFO - Included router: routers.aihub.router
+2026-10-18 18:37:19,185 - main - INFO - Included router: routers.auth.router
+2026-10-18 18:37:19,226 - main - INFO - Included router: routers.health.router
+2026-10-18 18:37:19,550 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 18:37:19,649 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 18:37:19,756 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 18:37:19,858 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 18:37:19,950 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 18:37:20,010 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 18:37:20,094 - main - INFO - Included router: routers.settings.router
+2026-10-18 18:37:20,250 - main - INFO - Included router: routers.storage.router
+2026-10-18 18:37:20,342 - main - INFO - Included router: routers.user.router
+2026-10-18 18:37:20,343 - main - INFO - === Application startup initiated ===
+2026-10-18 18:37:20,343 - main - INFO - === Application startup completed successfully ===
+2026-10-18 18:38:22,120 - main - INFO - === Logging system initialized ===
+2026-10-18 18:38:22,121 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 18:38:22,121 - main - INFO - Log level: DEBUG
+2026-10-18 18:38:22,121 - main - INFO - Log date: 20261018
+2026-10-18 18:38:22,213 - main - INFO - Included router: routers.aihub.router
+2026-10-18 18:38:22,853 - main - INFO - Included router: routers.auth.router
+2026-10-18 18:38:22,856 - main - INFO - Included router: routers.health.router
+2026-10-18 18:38:23,087 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 18:38:23,122 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 18:38:23,128 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 18:38:23,128 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 18:38:23,142 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 18:38:23,189 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 18:38:23,198 - main - INFO - Included router: routers.settings.router
+2026-10-18 18:38:23,217 - main - INFO - Included router: routers.storage.router
+2026-10-18 18:38:23,230 - main - INFO - Included router: routers.user.router
+2026-10-18 18:38:23,231 - main - INFO - === Application startup initiated ===
+2026-10-18 18:38:23,232 - main - INFO - === Application startup completed successfully ===
+2026-10-18 18:38:40,764 - main - INFO - === Logging system initialized ===
+2026-10-18 18:38:40,764 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 18:38:40,765 - main - INFO - Log level: DEBUG
+2026-10-18 18:38:40,765 - main - INFO - Log date: 20261018
+2026-10-18 18:38:40,856 - main - INFO - Included router: routers.aihub.router
+2026-10-18 18:38:41,519 - main - INFO - Included router: routers.auth.router
+2026-10-18 18:38:41,521 - main - INFO - Included router: routers.health.router
+2026-10-18 18:38:41,769 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 18:38:41,783 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 18:38:41,789 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 18:38:41,790 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 18:38:41,799 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 18:38:41,836 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 18:38:41,850 - main - INFO - Included router: routers.settings.router
+2026-10-18 18:38:41,869 - main - INFO - Included router: routers.storage.router
+2026-10-18 18:38:41,882 - main - INFO - Included router: routers.user.router
+2026-10-18 18:38:41,883 - main - INFO - === Application startup initiated ===
+2026-10-18 18:38:41,883 - main - INFO - === Application startup completed successfully ===
+2026-10-18 18:40:54,181 - main - INFO - === Logging system initialized ===
+2026-10-18 18:40:54,181 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 18:40:54,182 - main - INFO - Log level: DEBUG
+2026-10-18 18:40:54,182 - main - INFO - Log date: 20261018
+2026-10-18 18:40:54,284 - main - INFO - Included router: routers.aihub.router
+2026-10-18 18:40:55,049 - main - INFO - Included router: routers.auth.router
+2026-10-18 18:40:55,052 - main - INFO - Included router: routers.health.router
+2026-10-18 18:40:55,336 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 18:40:55,351 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 18:40:55,358 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 18:40:55,358 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 18:40:55,370 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 18:40:55,396 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 18:40:55,406 - main - INFO - Included router: routers.settings.router
+2026-10-18 18:40:55,426 - main - INFO - Included router: routers.storage.router
+2026-10-18 18:40:55,436 - main - INFO - Included router: routers.user.router
+2026-10-18 18:40:55,437 - main - INFO - === Application startup initiated ===
+2026-10-18 18:40:55,437 - main - INFO - === Application startup completed successfully ===
+2026-10-18 18:41:28,510 - main - INFO - === Logging system initialized ===
+2026-10-18 18:41:28,510 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 18:41:28,510 - main - INFO - Log level: DEBUG
+2026-10-18 18:41:28,510 - main - INFO - Log date: 20261018
+2026-10-18 18:41:28,604 - main - INFO - Included router: routers.aihub.router
+2026-10-18 18:41:29,357 - main - INFO - Included router: routers.auth.router
+2026-10-18 18:41:29,360 - main - INFO - Included router: routers.health.router
+2026-10-18 18:41:29,680 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 18:41:29,699 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 18:41:29,709 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 18:41:29,711 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 18:41:29,725 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 18:41:29,761 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 18:41:29,772 - main - INFO - Included router: routers.settings.router
+2026-10-18 18:41:29,796 - main - INFO - Included router: routers.storage.router
+2026-10-18 18:41:29,815 - main - INFO - Included router: routers.user.router
+2026-10-18 18:41:29,816 - main - INFO - === Application startup initiated ===
+2026-10-18 18:41:29,816 - main - INFO - === Application startup completed successfully ===
+2026-10-18 18:55:10,698 - main - INFO - === Logging system initialized ===
+2026-10-18 18:55:10,698 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 18:55:10,698 - main - INFO - Log level: DEBUG
+2026-10-18 18:55:10,698 - main - INFO - Log date: 20261018
+2026-10-18 18:55:10,820 - main - INFO - Included router: routers.aihub.router
+2026-10-18 18:55:11,659 - main - INFO - Included router: routers.auth.router
+2026-10-18 18:55:11,661 - main - INFO - Included router: routers.health.router
+2026-10-18 18:55:11,890 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 18:55:11,906 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 18:55:11,912 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 18:55:11,912 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 18:55:11,923 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 18:55:11,979 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 18:55:11,989 - main - INFO - Included router: routers.settings.router
+2026-10-18 18:55:12,014 - main - INFO - Included router: routers.storage.router
+2026-10-18 18:55:12,050 - main - INFO - Included router: routers.user.router
+2026-10-18 18:55:12,051 - main - INFO - === Application startup initiated ===
+2026-10-18 18:55:12,051 - main - INFO - === Application startup completed successfully ===
+2026-10-18 18:56:16,316 - main - INFO - === Logging system initialized ===
+2026-10-18 18:56:16,316 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 18:56:16,317 - main - INFO - Log level: DEBUG
+2026-10-18 18:56:16,317 - main - INFO - Log date: 20261018
+2026-10-18 18:56:16,416 - main - INFO - Included router: routers.aihub.router
+2026-10-18 18:56:17,085 - main - INFO - Included router: routers.auth.router
+2026-10-18 18:56:17,087 - main - INFO - Included router: routers.health.router
+2026-10-18 18:56:17,311 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 18:56:17,327 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 18:56:17,435 - main - INFO - Included router: routers.lingguang_previews.router
+2026-10-18 18:56:17,441 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 18:56:17,442 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 18:56:17,451 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 18:56:17,482 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 18:56:17,492 - main - INFO - Included router: routers.settings.router
+2026-10-18 18:56:17,516 - main - INFO - Included router: routers.storage.router
+2026-10-18 18:56:17,527 - main - INFO - Included router: routers.user.router
+2026-10-18 18:56:17,528 - main - INFO - === Application startup initiated ===
+2026-10-18 18:56:17,528 - main - INFO - === Application startup completed successfully ===
+2026-10-18 18:56:32,483 - main - INFO - === Logging system initialized ===
+2026-10-18 18:56:32,484 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 18:56:32,484 - main - INFO - Log level: DEBUG
+2026-10-18 18:56:32,484 - main - INFO - Log date: 20261018
+2026-10-18 18:56:32,610 - main - INFO - Included router: routers.aihub.router
+2026-10-18 18:56:33,420 - main - INFO - Included router: routers.auth.router
+2026-10-18 18:56:33,423 - main - INFO - Included router: routers.health.router
+2026-10-18 18:56:33,704 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 18:56:33,722 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 18:56:33,835 - main - INFO - Included router: routers.lingguang_previews.router
+2026-10-18 18:56:33,842 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 18:56:33,843 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 18:56:33,859 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 18:56:33,892 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 18:56:33,906 - main - INFO - Included router: routers.settings.router
+2026-10-18 18:56:33,967 - main - INFO - Included router: routers.storage.router
+2026-10-18 18:56:33,979 - main - INFO - Included router: routers.user.router
+2026-10-18 18:56:33,980 - main - INFO - === Application startup initiated ===
+2026-10-18 18:56:33,981 - main - INFO - === Application startup completed successfully ===
+2026-10-18 18:57:34,813 - main - INFO - === Logging system initialized ===
+2026-10-18 18:57:34,814 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 18:57:34,814 - main - INFO - Log level: DEBUG
+2026-10-18 18:57:34,814 - main - INFO - Log date: 20261018
+2026-10-18 18:57:34,914 - main - INFO - Included router: routers.aihub.router
+2026-10-18 18:57:35,643 - main - INFO - Included router: routers.auth.router
+2026-10-18 18:57:35,645 - main - INFO - Included router: routers.health.router
+2026-10-18 18:57:35,899 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 18:57:35,915 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 18:57:35,933 - main - INFO - Included router: routers.lingguang_previews.router
+2026-10-18 18:57:35,943 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 18:57:35,945 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 18:57:35,951 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 18:57:35,983 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 18:57:35,995 - main - INFO - Included router: routers.settings.router
+2026-10-18 18:57:36,052 - main - INFO - Included router: routers.storage.router
+2026-10-18 18:57:36,064 - main - INFO - Included router: routers.user.router
+2026-10-18 18:57:36,066 - main - INFO - === Application startup initiated ===
+2026-10-18 18:57:36,066 - main - INFO - === Application startup completed successfully ===
+2026-10-18 19:00:46,155 - main - INFO - === Logging system initialized ===
+2026-10-18 19:00:46,155 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 19:00:46,156 - main - INFO - Log level: DEBUG
+2026-10-18 19:00:46,156 - main - INFO - Log date: 20261018
+2026-10-18 19:00:46,276 - main - INFO - Included router: routers.aihub.router
+2026-10-18 19:00:47,182 - main - INFO - Included router: routers.auth.router
+2026-10-18 19:00:47,185 - main - INFO - Included router: routers.health.router
+2026-10-18 19:00:47,432 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 19:00:47,450 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 19:00:47,462 - main - INFO - Included router: routers.lingguang_previews.router
+2026-10-18 19:00:47,472 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 19:00:47,473 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 19:00:47,480 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 19:00:47,511 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 19:00:47,522 - main - INFO - Included router: routers.settings.router
+2026-10-18 19:00:47,544 - main - INFO - Included router: routers.storage.router
+2026-10-18 19:00:47,559 - main - INFO - Included router: routers.user.router
+2026-10-18 19:00:47,560 - main - INFO - === Application startup initiated ===
+2026-10-18 19:00:47,560 - main - INFO - === Application startup completed successfully ===
+2026-10-18 19:11:46,167 - main - INFO - === Logging system initialized ===
+2026-10-18 19:11:46,168 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 19:11:46,168 - main - INFO - Log level: DEBUG
+2026-10-18 19:11:46,168 - main - INFO - Log date: 20261018
+2026-10-18 19:11:46,284 - main - INFO - Included router: routers.aihub.router
+2026-10-18 19:11:47,203 - main - INFO - Included router: routers.auth.router
+2026-10-18 19:11:47,207 - main - INFO - Included router: routers.health.router
+2026-10-18 19:11:47,492 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 19:11:47,511 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 19:11:47,554 - main - INFO - Included router: routers.lingguang_previews.router
+2026-10-18 19:11:47,562 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 19:11:47,564 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 19:11:47,570 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 19:11:47,601 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 19:11:47,616 - main - INFO - Included router: routers.settings.router
+2026-10-18 19:11:47,649 - main - INFO - Included router: routers.storage.router
+2026-10-18 19:11:47,662 - main - INFO - Included router: routers.user.router
+2026-10-18 19:11:47,664 - main - INFO - === Application startup initiated ===
+2026-10-18 19:11:47,664 - main - INFO - === Application startup completed successfully ===
+2026-10-18 19:14:16,591 - main - INFO - === Logging system initialized ===
+2026-10-18 19:14:16,592 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 19:14:16,592 - main - INFO - Log level: DEBUG
+2026-10-18 19:14:16,592 - main - INFO - Log date: 20261018
+2026-10-18 19:14:16,691 - main - INFO - Included router: routers.aihub.router
+2026-10-18 19:14:17,473 - main - INFO - Included router: routers.auth.router
+2026-10-18 19:14:17,476 - main - INFO - Included router: routers.health.router
+2026-10-18 19:14:17,801 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 19:14:17,822 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 19:14:17,858 - main - INFO - Included router: routers.lingguang_previews.router
+2026-10-18 19:14:17,869 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 19:14:17,871 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 19:14:17,881 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 19:14:17,910 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 19:14:17,921 - main - INFO - Included router: routers.settings.router
+2026-10-18 19:14:17,944 - main - INFO - Included router: routers.storage.router
+2026-10-18 19:14:17,955 - main - INFO - Included router: routers.user.router
+2026-10-18 19:14:17,956 - main - INFO - === Application startup initiated ===
+2026-10-18 19:14:17,956 - main - INFO - === Application startup completed successfully ===
+2026-10-18 19:14:51,334 - main - INFO - === Logging system initialized ===
+2026-10-18 19:14:51,334 - main - INFO - Log file: logs/app_20261018.log
+2026-10-18 19:14:51,335 - main - INFO - Log level: DEBUG
+2026-10-18 19:14:51,335 - main - INFO - Log date: 20261018
+2026-10-18 19:14:51,465 - main - INFO - Included router: routers.aihub.router
+2026-10-18 19:14:52,323 - main - INFO - Included router: routers.auth.router
+2026-10-18 19:14:52,325 - main - INFO - Included router: routers.health.router
+2026-10-18 19:14:52,609 - main - INFO - Included router: routers.lingguang_auth.router
+2026-10-18 19:14:52,631 - main - INFO - Included router: routers.lingguang_messages.router
+2026-10-18 19:14:52,989 - main - INFO - Included router: routers.lingguang_previews.router
+2026-10-18 19:14:52,998 - main - INFO - Included router: routers.lingguang_projects.router
+2026-10-18 19:14:52,999 - main - INFO - Included router: routers.lingguang_provider_keys.router
+2026-10-18 19:14:53,006 - main - INFO - Included router: routers.lingguang_versions.router
+2026-10-18 19:14:53,083 - main - INFO - Included router: routers.model_provider.router
+2026-10-18 19:14:53,093 - main - INFO - Included router: routers.settings.router
+2026-10-18 19:14:53,121 - main - INFO - Included router: routers.storage.router
+2026-10-18 19:14:53,135 - main - INFO - Included router: routers.user.router
+2026-10-18 19:14:53,136 - main - INFO - === Application startup initiated ===
+2026-10-18 19:14:53,136 - main - INFO - === Application startup completed successfully ===

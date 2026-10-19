@@ -1,0 +1,19 @@
+{
+    "title": "lingguang_projects",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "user_id": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "user_id",
+        "title"
+    ]
+}

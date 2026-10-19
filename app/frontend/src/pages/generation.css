@@ -1,0 +1,22 @@
+.generation-timeline { margin:18px 0; padding:16px; border:1px solid #294969; border-radius:12px; background:#0b1522; }
+.generation-heading { display:flex; align-items:center; gap:8px; margin-bottom:16px; color:#eaf6ff; font-size:12px; }
+.generation-heading>span:last-child { margin-left:auto; font-size:10px; color:#a4b8ca; }
+.generation-dot { width:6px; height:6px; border-radius:50%; background:#69a9ff; }
+.generation-timeline ol { list-style:none; padding:0; margin:0; }
+.generation-step { display:flex; align-items:flex-start; gap:10px; position:relative; padding:0 0 18px; color:#8ca3b8; }
+.generation-step:not(:last-child)::after { content:''; position:absolute; left:10px; top:23px; bottom:3px; width:1px; background:#294969; }
+.generation-step:last-child { padding-bottom:0; }
+.generation-marker { flex:none; width:21px; height:21px; border:1px solid #294969; border-radius:50%; display:grid; place-items:center; background:#101b29; }
+.generation-step>div { flex:1; min-width:0; }
+.generation-step strong { display:block; font-size:12px; line-height:21px; font-weight:500; }
+.generation-step small { display:block; margin-top:3px; font-size:10px; line-height:1.6; }
+.generation-state { flex:none; font-size:9px; line-height:21px; }
+.generation-step.is-running { color:#bad7ff; }
+.generation-step.is-running .generation-marker { background:#172c48; border-color:#69a9ff; }
+.generation-step.is-done .generation-marker { color:#bad7ff; border-color:#4273ac; }
+.generation-step.is-failed { color:#ffb4be; }
+.generation-step.is-failed .generation-marker { border-color:#713445; background:#351722; }
+.generation-timeline>p { border-top:1px solid #294969; padding-top:12px; margin-top:16px; font-size:11px; line-height:1.7; color:#a4b8ca; }
+.app-shell .generation-error>p { margin:0; }
+.app-shell .generation-error .generation-retry { margin:12px 0 0; padding:9px 12px; min-height:40px; background:#69a9ff; color:#07151e; border:0; border-radius:7px; text-decoration:none; font-size:12px; font-weight:600; }
+.app-shell .generation-error .generation-retry:hover:not(:disabled) { background:#bad7ff; }

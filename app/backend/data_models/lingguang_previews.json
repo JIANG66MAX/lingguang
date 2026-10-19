@@ -1,0 +1,28 @@
+{
+    "title": "lingguang_previews",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "user_id": {
+            "type": "string"
+        },
+        "version_id": {
+            "type": "integer"
+        },
+        "token_hash": {
+            "type": "string"
+        },
+        "active": {
+            "type": "boolean",
+            "default": true
+        }
+    },
+    "required": [
+        "user_id",
+        "version_id",
+        "token_hash",
+        "active"
+    ]
+}

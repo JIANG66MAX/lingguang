@@ -1,0 +1,5 @@
+.prompt-box .idea-label { flex-wrap:wrap; }
+.prompt-box .idea-label span { display:block; color:#68736b; line-height:1.7; }
+@media(max-width:767px) {
+  .prompt-box .idea-label span { flex-basis:100%; margin-left:0; font-size:11px; }
+}

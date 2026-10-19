@@ -1,0 +1,24 @@
+{
+    "title": "lingguang_provider_keys",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "user_id": {
+            "type": "string"
+        },
+        "provider": {
+            "type": "string"
+        },
+        "encrypted_key": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "user_id",
+        "provider",
+        "encrypted_key"
+    ]
+}
